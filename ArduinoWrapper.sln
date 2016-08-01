@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArduinoTestbenchBasic", "ArduinoTestbenchBasic\ArduinoTestbenchBasic.csproj", "{C5D28C78-2038-49BE-B5A4-8105E367CD92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "..\..\Utilities\Utilities\Utilities.csproj", "{2530B029-8F53-4455-A8C9-127C9934A3AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArduinoWrapper", "ArduinoWrapper\ArduinoWrapper.csproj", "{A1807332-CDDD-4BB2-BEDE-F046BEB3E22D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5D28C78-2038-49BE-B5A4-8105E367CD92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5D28C78-2038-49BE-B5A4-8105E367CD92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5D28C78-2038-49BE-B5A4-8105E367CD92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5D28C78-2038-49BE-B5A4-8105E367CD92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2530B029-8F53-4455-A8C9-127C9934A3AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2530B029-8F53-4455-A8C9-127C9934A3AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2530B029-8F53-4455-A8C9-127C9934A3AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2530B029-8F53-4455-A8C9-127C9934A3AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1807332-CDDD-4BB2-BEDE-F046BEB3E22D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1807332-CDDD-4BB2-BEDE-F046BEB3E22D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1807332-CDDD-4BB2-BEDE-F046BEB3E22D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1807332-CDDD-4BB2-BEDE-F046BEB3E22D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

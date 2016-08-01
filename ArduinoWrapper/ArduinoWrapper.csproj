@@ -69,7 +69,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Utilities\Utilities\Utilities.csproj">
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
       <Project>{2530b029-8f53-4455-a8c9-127c9934a3af}</Project>
       <Name>Utilities</Name>
     </ProjectReference>

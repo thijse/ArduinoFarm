@@ -1,0 +1,253 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9B4DE9AF-E7F1-4471-9723-A7986C66E202}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IuSpy</RootNamespace>
+    <AssemblyName>IuSpy</AssemblyName>
+    <ApplicationIcon>Resources\FindWindow.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Catcher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Catcher.Designer.cs">
+      <DependentUpon>Catcher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FindWindowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindWindowForm.Designer.cs">
+      <DependentUpon>FindWindowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Highlighter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Highlighter.Designer.cs">
+      <DependentUpon>Highlighter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Iu.Windows.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewWindow.Designer.cs">
+      <DependentUpon>NewWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs">
+      <CustomToolNamespace>IuSpy</CustomToolNamespace>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="StylesEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StylesEditForm.Designer.cs">
+      <DependentUpon>StylesEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TreeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TreeForm.Designer.cs">
+      <DependentUpon>TreeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinDetails.Designer.cs">
+      <DependentUpon>WinDetails.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Catcher.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Catcher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FindWindowForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FindWindowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Highlighter.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Highlighter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewWindow.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NewWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Sight.cur">
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylesEditForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>StylesEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TreeForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TreeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinDetails.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>WinDetails.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text_tree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bulb.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\parent16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Child16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Next16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Previous16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Owner_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Highlight16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NoImage32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NoImage16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minimize24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Restore24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Maximize24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VisibleTrue24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VisibleFalse24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enabled24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Disabled24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minimize16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Restore16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Maximize16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Visible16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ivisible16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enabled16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Disabled16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\FindWindow.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

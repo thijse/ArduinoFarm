@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2530B029-8F53-4455-A8C9-127C9934A3AF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Utilities</RootNamespace>
+    <AssemblyName>Utilities</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConfigurationSerializer.cs" />
+    <Compile Include="ConsoleUtils.cs" />
+    <Compile Include="DateRange.cs" />
+    <Compile Include="DelegateQueue\AsyncResult.cs" />
+    <Compile Include="DelegateQueue\DelegateQueue.AsyncResult.cs" />
+    <Compile Include="DelegateQueue\DelegateQueue.cs" />
+    <Compile Include="DelegateQueue\InvokeCompletedEventArgs.cs" />
+    <Compile Include="DelegateQueue\PostCompletedEventArgs.cs" />
+    <Compile Include="DelegateScheduler\DelegateScheduler.cs" />
+    <Compile Include="DelegateScheduler\DelegateScheduler.Task.cs" />
+    <Compile Include="DoubleEndedQueue\Deque.cs" />
+    <Compile Include="DoubleEndedQueue\GenericDeque.cs" />
+    <Compile Include="DoubleEndedQueue\GenericDeque.Enumerator.cs" />
+    <Compile Include="DoubleEndedQueue\GenericDeque.Node.cs" />
+    <Compile Include="DoubleEndedQueue\GenericDeque.Synchronized.cs" />
+    <Compile Include="DoubleEndedQueue\GenericTester.cs" />
+    <Compile Include="DoubleEndedQueue\Tester.cs" />
+    <Compile Include="FileUtils.cs" />
+    <Compile Include="HandleExecutable.cs" />
+    <Compile Include="NumberUtils.cs" />
+    <Compile Include="PriorityQueue\PriorityQueue.cs" />
+    <Compile Include="ProcessUtils.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringUtils.cs" />
+    <Compile Include="SystemUtils.cs" />
+    <Compile Include="DateTimeUtils.cs" />
+    <Compile Include="DialogUtils.cs" />
+    <Compile Include="TemplateParser.cs" />
+    <Compile Include="TimeOut.cs" />
+    <Compile Include="EagerTimer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Wildcard.cs" />
+    <Compile Include="Windows\Iu.Windows.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DelegateQueue\DelegateQueue.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

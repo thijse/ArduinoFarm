@@ -39,7 +39,7 @@ namespace ArduinoWrapper
     public class BoardArchitecture
     {
         public string Name { get; set; }
-         public string FileName { get; set; }
+        public string FileName { get; set; }
         public List<BoardDescription>  BoardDescriptions { get; set; }
 
          public BoardArchitecture()

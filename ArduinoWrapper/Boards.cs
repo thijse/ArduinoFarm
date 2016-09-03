@@ -19,12 +19,18 @@ namespace ArduinoWrapper
 
     public class BoardPackage
     {
+        public ArduinoEnvironment Parent { get; set; }
         public string Name { get; set; }
         public BoardArchitectures BoardArchitectures { get; set; }
 
         public BoardPackage()
         {
             BoardArchitectures = new BoardArchitectures();
+        }
+
+        public override string ToString()
+        {
+            return Name;
         }
     }
 
@@ -38,6 +44,7 @@ namespace ArduinoWrapper
 
     public class BoardArchitecture
     {
+        public BoardPackage Parent { get; set; }
         public string Name { get; set; }
         public string FileName { get; set; }
         public List<BoardDescription>  BoardDescriptions { get; set; }
@@ -46,6 +53,11 @@ namespace ArduinoWrapper
          {
              BoardDescriptions = new BoardDescriptions();
          }
+
+        public override string ToString()
+        {
+            return Parent.ToString()+":"+Name;
+        }
     }
 
 
@@ -59,11 +71,46 @@ namespace ArduinoWrapper
 
     public class BoardDescription
     {
+        public BoardArchitecture Parent { get; set; }
         public string Name { get; set; }
+        public string Description { get; set; }
+
+        public BoardCpus BoardCpus { get; set; }
+
+        public BoardDescription()
+        {
+            BoardCpus = new BoardCpus();
+        }
+
+        public override string ToString()
+        {
+            return Parent.ToString()+":"+Name;
+        }
+    }
+
+    public class BoardCpus : List<BoardCpu>
+    {
+        public BoardCpu this[string name]
+        {
+           get { return this.FirstOrDefault(b => b.Name == name); }
+        }
+    }
+
+    public class BoardCpu
+    {
+        public BoardDescription Parent { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public override string ToString()
+        {
+            return Parent.ToString()+":"+Name;
+        }
     } 
 
     public class Boards
     {
+        
+
         private readonly string _rootPath;
         private readonly string _userPath;
         private ArduinoConfigReader _arduinoConfigReader;
@@ -75,20 +122,23 @@ namespace ArduinoWrapper
             _rootPath = rootPath;
             _userPath = userPath;
             BoardPackages = new BoardPackages();
-            var t = FindBoardFiles();
+            //var t = FindBoardFiles();
             _arduinoConfigReader = new ArduinoConfigReader();
         }
 
-        public List<BoardPackage> FindBoardFiles()
+        public BoardPackages FindBoardFiles(ArduinoEnvironment arduinoEnvironment)
         {
             BoardPackages.Clear();
-            AddExeBoardFiles(_rootPath);
-            AddUserBoardFiles(_userPath);
+            AddExeBoardFiles(_rootPath, arduinoEnvironment);
+            AddUserBoardFiles(_userPath, arduinoEnvironment);
+
+            // Board name as used by compiler
+            var boardname = BoardPackages[0].BoardArchitectures[0].BoardDescriptions[0].ToString();
             return BoardPackages;
         }
 
 
-        public void AddExeBoardFiles(string rootPath)
+        public void AddExeBoardFiles(string rootPath, ArduinoEnvironment arduinoEnvironment)
         {
             //var boardsFiles = new List<string>();
                  
@@ -112,7 +162,7 @@ namespace ArduinoWrapper
                         currentPackage = BoardPackages[packageName];
                         if (currentPackage == null)
                         {
-                            currentPackage = new BoardPackage {Name = packageName};
+                            currentPackage = new BoardPackage {Name = packageName, Parent = arduinoEnvironment};
                             BoardPackages.Add(currentPackage);
                         }
                     }
@@ -120,7 +170,11 @@ namespace ArduinoWrapper
                     var currentArchitecture = currentPackage.BoardArchitectures[architectureName];
                     if (currentArchitecture == null)
                     {
-                        currentArchitecture = new BoardArchitecture {Name = architectureName};
+                        currentArchitecture = new BoardArchitecture
+                        {
+                            Name = architectureName,
+                            Parent = currentPackage
+                        };
                         currentPackage.BoardArchitectures.Add(currentArchitecture);
                         currentArchitecture.FileName = boardFile;
                     }
@@ -129,7 +183,7 @@ namespace ArduinoWrapper
             }           
         }
 
-        public void AddUserBoardFiles(string userPath)
+        public void AddUserBoardFiles(string userPath, ArduinoEnvironment arduinoEnvironment)
         {
             //var boardsFiles = new List<string>();
                  
@@ -173,12 +227,14 @@ namespace ArduinoWrapper
                         var currentArchitecture = currentPackage.BoardArchitectures[architectureName];
                         if (currentArchitecture == null)
                         {
-                            currentArchitecture = new BoardArchitecture {Name = architectureName};
+                            currentArchitecture = new BoardArchitecture
+                            {
+                                Name = architectureName,
+                                Parent = currentPackage
+                            };
                             currentPackage.BoardArchitectures.Add(currentArchitecture);
                             currentArchitecture.FileName = boardFile;
-
                         }
-
                         AddBoards(currentArchitecture);
                     }
                 }
@@ -188,7 +244,37 @@ namespace ArduinoWrapper
 
         private void AddBoards(BoardArchitecture boardArchitecture)
         {
-            
+            var board = new BoardDescription();
+            var boardsConfig = new ArduinoConfigReader(boardArchitecture.FileName);
+            foreach (var keyvalue in boardsConfig.Dictionary)
+            {
+                var key = keyvalue.Key;
+                var value = keyvalue.Value;
+                if (key.Path[1] == "name")
+                {
+                    board = new BoardDescription
+                    {
+                        Description = value,
+                        Name = key.Path[0],
+                        Parent = boardArchitecture
+                    };
+                    boardArchitecture.BoardDescriptions.Add(board);
+                }
+
+                //if (key.Path.Length == 4 && key.Path[2] == "cpu" && key.Path[0] == board.Name)
+                if (key.Path.Length == 4 && key.Path[2] == "cpu" )
+                {
+                    if (key.Path[0] == board.Name)
+                    {
+                        var cpu = new BoardCpu();
+                        cpu.Name = key.Path[3];
+                        cpu.Description = value;
+                        cpu.Parent = board;
+                        board.BoardCpus.Add(cpu);
+                    }
+                }
+                
+            }
         }
     }
 }

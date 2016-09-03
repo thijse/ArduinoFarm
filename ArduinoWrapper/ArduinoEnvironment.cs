@@ -117,9 +117,9 @@ namespace ArduinoWrapper
             return Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData );
         }
 
-        public List<BoardPackage> GetBoards()
+        public BoardPackages GetBoards()
         {
-            return _boards.FindBoardFiles();
+            return _boards.FindBoardFiles(this);
         } 
 
 

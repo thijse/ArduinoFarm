@@ -134,7 +134,7 @@ namespace ArduinoWrapper
                     var key = keyvaluepair[0].Trim();                                                                     // trim key
                     if (string.IsNullOrEmpty(key)) continue;                                                              // skip if key is empty
                     var value =(keyvaluepair.Length==2)?keyvaluepair[1].Trim():"";                                        // add empty string value if not existent
-                    Console.WriteLine("key:\"{0}\", value:\"{1}\"",key,value);
+                    //Console.WriteLine("key:\"{0}\", value:\"{1}\"",key,value);
                     Dictionary.Add((ArduinoKey)key,value);                                                                // add to dictionary
                 }
             }

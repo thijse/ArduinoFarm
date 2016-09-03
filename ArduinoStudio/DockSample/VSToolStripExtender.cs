@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using System.ComponentModel;
 using System.Collections.Generic;
 
-namespace DockSample
+namespace ArduinoStudio
 {
     [ProvideProperty("EnableVS2012Style", typeof(ToolStrip))]
     public partial class VSToolStripExtender : Component, IExtenderProvider

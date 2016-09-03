@@ -1,6 +1,6 @@
-namespace DockSample
+namespace ArduinoStudio
 {
-    partial class DummyTaskList
+    partial class TaskList
     {
         /// <summary>
         /// Required designer variable.
@@ -27,7 +27,7 @@ namespace DockSample
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DummyTaskList));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TaskList));
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader2 = new System.Windows.Forms.ColumnHeader();

@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 
-namespace DockSample.Customization
+namespace ArduinoStudio.Customization
 {
 	internal static class DockHelper
 	{

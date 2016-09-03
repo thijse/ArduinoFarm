@@ -9,9 +9,9 @@ using WeifenLuo.WinFormsUI.Docking;
 
 namespace ArduinoStudio
 {
-    public partial class ToolWindow : DockContent
+    public partial class OutputWindow : ToolWindow
     {
-        public ToolWindow()
+        public OutputWindow()
         {
             InitializeComponent();
         }

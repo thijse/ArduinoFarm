@@ -1,4 +1,4 @@
-﻿namespace DockSample
+﻿namespace ArduinoStudio
 {
     partial class SplashScreen
     {
@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::DockSample.Properties.Resources.SplashScreen;
+            this.BackgroundImage = global::ArduinoStudio.Properties.Resources.SplashScreen;
             this.ClientSize = new System.Drawing.Size(458, 598);
             this.ControlBox = false;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

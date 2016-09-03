@@ -6,7 +6,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace DockSample
+namespace ArduinoStudio
 {
     class VS2013ColorTable : ProfessionalColorTable
     {

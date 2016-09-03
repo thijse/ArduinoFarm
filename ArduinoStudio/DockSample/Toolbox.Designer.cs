@@ -1,6 +1,6 @@
-namespace DockSample
+namespace ArduinoStudio
 {
-    partial class DummyToolbox
+    partial class Toolbox
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@ namespace DockSample
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DummyToolbox));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Toolbox));
             this.label2 = new System.Windows.Forms.Label();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.label1 = new System.Windows.Forms.Label();

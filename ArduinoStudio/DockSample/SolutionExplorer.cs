@@ -7,13 +7,18 @@ using System.Text;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 
-namespace DockSample
+namespace ArduinoStudio
 {
-    public partial class DummyToolbox : ToolWindow
+    public partial class SolutionExplorer : ToolWindow
     {
-        public DummyToolbox()
+        public SolutionExplorer()
         {
             InitializeComponent();
+        }
+
+        protected override void OnRightToLeftLayoutChanged(EventArgs e)
+        {
+            treeView1.RightToLeftLayout = RightToLeftLayout;
         }
     }
 }

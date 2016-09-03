@@ -1,6 +1,6 @@
-namespace DockSample
+namespace ArduinoStudio
 {
-    partial class DummyPropertyWindow
+    partial class PropertyWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@ namespace DockSample
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DummyPropertyWindow));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PropertyWindow));
             this.propertyGrid = new System.Windows.Forms.PropertyGrid();
             this.comboBox = new System.Windows.Forms.ComboBox();
             this.mainMenu1 = new System.Windows.Forms.MainMenu(this.components);

@@ -8,11 +8,11 @@ using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 using System.IO;
 
-namespace DockSample
+namespace ArduinoStudio
 {
-    public partial class DummyDoc : DockContent
+    public partial class Document : DockContent
     {
-        public DummyDoc()
+        public Document()
         {
             InitializeComponent();
         }

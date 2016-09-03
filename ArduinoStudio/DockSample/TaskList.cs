@@ -7,11 +7,11 @@ using System.Text;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 
-namespace DockSample
+namespace ArduinoStudio
 {
-    public partial class DummyTaskList : ToolWindow
+    public partial class TaskList : ToolWindow
     {
-        public DummyTaskList()
+        public TaskList()
         {
             InitializeComponent();
         }

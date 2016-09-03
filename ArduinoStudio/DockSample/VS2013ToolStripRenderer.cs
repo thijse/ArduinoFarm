@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-namespace DockSample
+namespace ArduinoStudio
 {
     internal class Vs2013ToolStripRenderer : ToolStripProfessionalRenderer
     {

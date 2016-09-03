@@ -1,6 +1,6 @@
-namespace DockSample
+namespace ArduinoStudio
 {
-    partial class DummyOutputWindow
+    partial class OutputWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -27,7 +27,7 @@ namespace DockSample
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DummyOutputWindow));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OutputWindow));
             this.comboBox = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();

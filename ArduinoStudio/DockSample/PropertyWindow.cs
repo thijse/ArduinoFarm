@@ -7,11 +7,11 @@ using System.Text;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 
-namespace DockSample
+namespace ArduinoStudio
 {
-    public partial class DummyPropertyWindow : ToolWindow
+    public partial class PropertyWindow : ToolWindow
     {
-        public DummyPropertyWindow()
+        public PropertyWindow()
         {
             InitializeComponent();
             comboBox.SelectedIndex = 0;

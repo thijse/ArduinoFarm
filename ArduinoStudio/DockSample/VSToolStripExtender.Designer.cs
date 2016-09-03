@@ -1,4 +1,4 @@
-﻿namespace DockSample
+﻿namespace ArduinoStudio
 {
     partial class VSToolStripExtender
     {

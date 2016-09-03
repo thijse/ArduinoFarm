@@ -1,6 +1,6 @@
-namespace DockSample
+namespace ArduinoStudio
 {
-    partial class DummyDoc
+    partial class Document
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@ namespace DockSample
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DummyDoc));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Document));
             this.mainMenu = new System.Windows.Forms.MenuStrip();
             this.menuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItem2 = new System.Windows.Forms.ToolStripMenuItem();

@@ -1,4 +1,4 @@
-namespace DockSample
+namespace ArduinoStudio
 {
     partial class AboutDialog
     {
@@ -30,7 +30,6 @@ namespace DockSample
             this.buttonOK = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.labelLibVersion = new System.Windows.Forms.Label();
             this.labelAppVersion = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -46,11 +45,12 @@ namespace DockSample
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(24, 59);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 16);
+            this.label1.Size = new System.Drawing.Size(190, 35);
             this.label1.TabIndex = 1;
-            this.label1.Text = "DockSample Version:";
+            this.label1.Text = "Arduino Studio";
             // 
             // label2
             // 
@@ -58,16 +58,7 @@ namespace DockSample
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(272, 32);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Copyright 2007, Weifen Luo";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 81);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "DockPanel Suite Version:";
+            this.label2.Text = "Copyright 2015, Thijs Elenbaas, Maarten van Kampen";
             // 
             // labelLibVersion
             // 
@@ -78,10 +69,12 @@ namespace DockSample
             // 
             // labelAppVersion
             // 
-            this.labelAppVersion.Location = new System.Drawing.Point(129, 59);
+            this.labelAppVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAppVersion.Location = new System.Drawing.Point(199, 46);
             this.labelAppVersion.Name = "labelAppVersion";
-            this.labelAppVersion.Size = new System.Drawing.Size(97, 13);
+            this.labelAppVersion.Size = new System.Drawing.Size(97, 32);
             this.labelAppVersion.TabIndex = 5;
+            this.labelAppVersion.Click += new System.EventHandler(this.labelAppVersion_Click);
             // 
             // AboutDialog
             // 
@@ -90,7 +83,6 @@ namespace DockSample
             this.ClientSize = new System.Drawing.Size(322, 215);
             this.Controls.Add(this.labelAppVersion);
             this.Controls.Add(this.labelLibVersion);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonOK);
@@ -100,10 +92,9 @@ namespace DockSample
             this.Name = "AboutDialog";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "About";
+            this.Text = "About arduino studio";
             this.Load += new System.EventHandler(this.AboutDialog_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
         #endregion
@@ -111,7 +102,6 @@ namespace DockSample
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonOK;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelLibVersion;
         private System.Windows.Forms.Label labelAppVersion;
     }

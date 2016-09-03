@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace DockSample
+namespace ArduinoStudio
 {
     public partial class SplashScreen : Form
     {

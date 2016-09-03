@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.Reflection;
 using WeifenLuo.WinFormsUI.Docking;
 
-namespace DockSample
+namespace ArduinoStudio
 {
     public partial class AboutDialog : Form
     {
@@ -21,6 +21,11 @@ namespace DockSample
         {
             labelAppVersion.Text = typeof(MainForm).Assembly.GetName().Version.ToString();
             labelLibVersion.Text = typeof(DockPanel).Assembly.GetName().Version.ToString();
+        }
+
+        private void labelAppVersion_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

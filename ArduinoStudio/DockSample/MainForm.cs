@@ -613,6 +613,11 @@ namespace ArduinoStudio
             ResizeSplash();
         }
 
-
+        private void testBoardConfigToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var boards = _arduinoEnvironment.GetBoards();
+            BoardManagement.BoardSelector bs = new BoardManagement.BoardSelector(boards);
+            bs.ShowDialog();
+        }
     }
 }

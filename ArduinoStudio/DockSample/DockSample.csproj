@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -8,10 +8,9 @@
     <ProjectGuid>{40793A27-478B-4357-B4C3-FC8943131F3D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ArduinoStudio</RootNamespace>
-    <AssemblyName>ArduinoStudio</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <TargetFrameworkProfile />
+    <RootNamespace>DockSample</RootNamespace>
+    <AssemblyName>DockSample</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,7 +20,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,7 +28,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Logo.ico</ApplicationIcon>
@@ -63,41 +60,29 @@
     <Compile Include="BoardManagement\BoardSelector.Designer.cs">
       <DependentUpon>BoardSelector.cs</DependentUpon>
     </Compile>
-    <Compile Include="Document.cs">
-      <SubType>Form</SubType>
+    <Compile Include="DummyDoc.cs" />
+    <Compile Include="DummyDoc.Designer.cs">
+      <DependentUpon>DummyDoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="Document.Designer.cs">
-      <DependentUpon>Document.cs</DependentUpon>
+    <Compile Include="DummyOutputWindow.cs" />
+    <Compile Include="DummyOutputWindow.Designer.cs">
+      <DependentUpon>DummyOutputWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="OutputWindow.cs">
-      <SubType>Form</SubType>
+    <Compile Include="DummyPropertyWindow.cs" />
+    <Compile Include="DummyPropertyWindow.Designer.cs">
+      <DependentUpon>DummyPropertyWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="OutputWindow.Designer.cs">
-      <DependentUpon>OutputWindow.cs</DependentUpon>
+    <Compile Include="DummySolutionExplorer.cs" />
+    <Compile Include="DummySolutionExplorer.Designer.cs">
+      <DependentUpon>DummySolutionExplorer.cs</DependentUpon>
     </Compile>
-    <Compile Include="PropertyWindow.cs">
-      <SubType>Form</SubType>
+    <Compile Include="DummyTaskList.cs" />
+    <Compile Include="DummyTaskList.Designer.cs">
+      <DependentUpon>DummyTaskList.cs</DependentUpon>
     </Compile>
-    <Compile Include="PropertyWindow.Designer.cs">
-      <DependentUpon>PropertyWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SolutionExplorer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SolutionExplorer.Designer.cs">
-      <DependentUpon>SolutionExplorer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TaskList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TaskList.Designer.cs">
-      <DependentUpon>TaskList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Toolbox.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Toolbox.Designer.cs">
-      <DependentUpon>Toolbox.cs</DependentUpon>
+    <Compile Include="DummyToolbox.cs" />
+    <Compile Include="DummyToolbox.Designer.cs">
+      <DependentUpon>DummyToolbox.cs</DependentUpon>
     </Compile>
     <Compile Include="Customization\DockHelper.cs" />
     <Compile Include="MainForm.cs">
@@ -131,29 +116,29 @@
     <EmbeddedResource Include="BoardManagement\BoardSelector.resx">
       <DependentUpon>BoardSelector.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Document.resx">
+    <EmbeddedResource Include="DummyDoc.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>Document.cs</DependentUpon>
+      <DependentUpon>DummyDoc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OutputWindow.resx">
+    <EmbeddedResource Include="DummyOutputWindow.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>OutputWindow.cs</DependentUpon>
+      <DependentUpon>DummyOutputWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PropertyWindow.resx">
+    <EmbeddedResource Include="DummyPropertyWindow.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>PropertyWindow.cs</DependentUpon>
+      <DependentUpon>DummyPropertyWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SolutionExplorer.resx">
+    <EmbeddedResource Include="DummySolutionExplorer.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>SolutionExplorer.cs</DependentUpon>
+      <DependentUpon>DummySolutionExplorer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TaskList.resx">
+    <EmbeddedResource Include="DummyTaskList.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>TaskList.cs</DependentUpon>
+      <DependentUpon>DummyTaskList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Toolbox.resx">
+    <EmbeddedResource Include="DummyToolbox.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>Toolbox.cs</DependentUpon>
+      <DependentUpon>DummyToolbox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <SubType>Designer</SubType>
@@ -169,7 +154,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -222,22 +206,14 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="license.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Images\Logo.ico" />
     <Content Include="Images\SplashScreen.png" />
     <Content Include="Logo.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Theming\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\ArduinoWrapper\ArduinoWrapper.csproj">
-      <Project>{a1807332-cddd-4bb2-bede-f046beb3e22d}</Project>
-      <Name>ArduinoWrapper</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Utilities\Utilities.csproj">
-      <Project>{2530b029-8f53-4455-a8c9-127c9934a3af}</Project>
-      <Name>Utilities</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

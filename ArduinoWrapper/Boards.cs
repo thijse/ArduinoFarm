@@ -57,7 +57,7 @@ namespace ArduinoWrapper
 
         public override string ToString()
         {
-            return Parent.ToString()+":"+Name;
+            return Name;
         }
     }
 
@@ -88,17 +88,26 @@ namespace ArduinoWrapper
 
         public override string ToString()
         {
-            return Parent.ToString()+":"+Name;
+            return Description;
+        }
+
+        public string CompileArguments()
+        {
+            // Extent to handling options!
+            return string.Format("{0}:{1}:{2}", Parent.Parent.Name, Parent.Name, Name);
         }
     }
 
 
     /// <summary>
-    /// Dictionary with all board options
+    /// List with all board options
     /// </summary>
-    public class BoardOptionSet : Dictionary<string, BoardOption>
+    public class BoardOptionSet : List<BoardOption>
     {
-        
+        public BoardOption this[string name]
+        {            
+            get { return this.FirstOrDefault(b => b.Name == name); }            
+        }
     }
 
     /// <summary>
@@ -174,11 +183,8 @@ namespace ArduinoWrapper
 
         public void AddExeBoardFiles(string rootPath, ArduinoEnvironment arduinoEnvironment)
         {
-            //var boardsFiles = new List<string>();
-                 
             // All boards dirs 
             var boardsPath = FileUtils.Combine(rootPath, "hardware");
-
             var potentialPackageDirs = Directory.GetDirectories(boardsPath);
             foreach (var potentialPackageDir in potentialPackageDirs)
             {
@@ -186,10 +192,8 @@ namespace ArduinoWrapper
                 var potentialArchitectureDirs = Directory.GetDirectories(potentialPackageDir);
                 foreach (var potentialArchitectureDir in potentialArchitectureDirs)
                 {
-                    
                     var boardFile = FileUtils.Combine(potentialArchitectureDir, "boards.txt");
                     if (!File.Exists(boardFile)) continue;
-
                     if (currentPackage == null)
                     {
                         var packageName = FileUtils.GetBaseName(potentialPackageDir);
@@ -219,8 +223,6 @@ namespace ArduinoWrapper
 
         public void AddUserBoardFiles(string userPath, ArduinoEnvironment arduinoEnvironment)
         {
-            //var boardsFiles = new List<string>();
-                 
             // All boards dirs 
             var boardsPath = FileUtils.Combine(userPath, "Arduino15\\packages");
 
@@ -229,23 +231,14 @@ namespace ArduinoWrapper
             {
                 BoardPackage currentPackage = null;
                 var packageDir = FileUtils.Combine(potentialPackageDir, "hardware");
-                
-
-
-                    var potentialArchitectureDirs = Directory.GetDirectories(packageDir);
-
-
-                    foreach (var potentialArchitectureDir in potentialArchitectureDirs)
-                    {
-
-                    var versionDirs = Directory.GetDirectories(potentialArchitectureDir);
-                                    foreach (var versionDir in versionDirs)
+                var potentialArchitectureDirs = Directory.GetDirectories(packageDir);
+                foreach (var potentialArchitectureDir in potentialArchitectureDirs)
                 {
-
-
+                    var versionDirs = Directory.GetDirectories(potentialArchitectureDir);
+                    foreach (var versionDir in versionDirs)
+                    {
                         var boardFile = FileUtils.Combine(versionDir, "boards.txt");
                         if (!File.Exists(boardFile)) continue;
-
                         if (currentPackage == null)
                         {
                             var packageName = FileUtils.GetBaseName(potentialPackageDir);
@@ -255,26 +248,25 @@ namespace ArduinoWrapper
                                 currentPackage = new BoardPackage {Name = packageName};
                                 BoardPackages.Add(currentPackage);
                             }
-
                         }
-                        var architectureName = FileUtils.GetBaseName(potentialArchitectureDir);
-                        var currentArchitecture = currentPackage.BoardArchitectures[architectureName];
-                        if (currentArchitecture == null)
+                    var architectureName = FileUtils.GetBaseName(potentialArchitectureDir);
+                    var currentArchitecture = currentPackage.BoardArchitectures[architectureName];
+                    if (currentArchitecture == null)
+                    {
+                        currentArchitecture = new BoardArchitecture
                         {
-                            currentArchitecture = new BoardArchitecture
-                            {
-                                Name = architectureName,
-                                Parent = currentPackage
-                            };
-                            currentPackage.BoardArchitectures.Add(currentArchitecture);
-                            currentArchitecture.FileName = boardFile;
-                        }
-                        AddBoards(currentArchitecture);
+                            Name = architectureName,
+                            Parent = currentPackage,
+                            
+                        };
+                        currentPackage.BoardArchitectures.Add(currentArchitecture);
+                        currentArchitecture.FileName = boardFile;
                     }
+                    AddBoards(currentArchitecture);
                 }
             }
-            
-        }
+        }            
+    }
 
         /// <summary>
         /// Add boards in config file to the architecture description
@@ -348,10 +340,11 @@ namespace ArduinoWrapper
                 {   // Create BoardOption when needed, add option value.
                     BoardOption board_option;
                     string name = m.Groups[1].Value;
-                    if (!board.BoardOptions.TryGetValue(name, out board_option))
+                    board_option = board.BoardOptions[name];
+                    if (board_option == null)
                     {   // Create board option, including description of option (if available)
                         board_option = new BoardOption(name, menu_options.ContainsKey(name) ? menu_options[name] : name);
-                        board.BoardOptions.Add(name, board_option);
+                        board.BoardOptions.Add(board_option);
                     }
                     // Add option value, including a potentially defined upload speed
                     board_option.Add(new BoardOptionValue

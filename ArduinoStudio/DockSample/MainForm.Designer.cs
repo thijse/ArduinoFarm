@@ -72,22 +72,25 @@ namespace ArduinoStudio
             this.vS2012ToolStripExtender1 = new ArduinoStudio.VSToolStripExtender(this.components);
             this.topBar = new System.Windows.Forms.Panel();
             this.bottomBar = new System.Windows.Forms.Panel();
+            this.testBoardConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.toolBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainMenu
             // 
+            this.mainMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuItemFile,
             this.menuItemView,
             this.menuItemTools,
             this.menuItemWindow,
-            this.menuItemHelp});
+            this.menuItemHelp,
+            this.testBoardConfigToolStripMenuItem});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.MdiWindowListItem = this.menuItemWindow;
             this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Size = new System.Drawing.Size(579, 24);
+            this.mainMenu.Size = new System.Drawing.Size(579, 33);
             this.mainMenu.TabIndex = 7;
             // 
             // menuItemFile
@@ -101,54 +104,54 @@ namespace ArduinoStudio
             this.menuItem4,
             this.menuItemExit});
             this.menuItemFile.Name = "menuItemFile";
-            this.menuItemFile.Size = new System.Drawing.Size(37, 20);
+            this.menuItemFile.Size = new System.Drawing.Size(50, 29);
             this.menuItemFile.Text = "&File";
             this.menuItemFile.DropDownOpening += new System.EventHandler(this.menuItemFile_Popup);
             // 
             // menuItemNew
             // 
             this.menuItemNew.Name = "menuItemNew";
-            this.menuItemNew.Size = new System.Drawing.Size(191, 22);
+            this.menuItemNew.Size = new System.Drawing.Size(270, 30);
             this.menuItemNew.Text = "&New";
             this.menuItemNew.Click += new System.EventHandler(this.menuItemNew_Click);
             // 
             // menuItemOpen
             // 
             this.menuItemOpen.Name = "menuItemOpen";
-            this.menuItemOpen.Size = new System.Drawing.Size(191, 22);
+            this.menuItemOpen.Size = new System.Drawing.Size(270, 30);
             this.menuItemOpen.Text = "&Open...";
             this.menuItemOpen.Click += new System.EventHandler(this.menuItemOpen_Click);
             // 
             // menuItemClose
             // 
             this.menuItemClose.Name = "menuItemClose";
-            this.menuItemClose.Size = new System.Drawing.Size(191, 22);
+            this.menuItemClose.Size = new System.Drawing.Size(270, 30);
             this.menuItemClose.Text = "&Close";
             this.menuItemClose.Click += new System.EventHandler(this.menuItemClose_Click);
             // 
             // menuItemCloseAll
             // 
             this.menuItemCloseAll.Name = "menuItemCloseAll";
-            this.menuItemCloseAll.Size = new System.Drawing.Size(191, 22);
+            this.menuItemCloseAll.Size = new System.Drawing.Size(270, 30);
             this.menuItemCloseAll.Text = "Close &All";
             this.menuItemCloseAll.Click += new System.EventHandler(this.menuItemCloseAll_Click);
             // 
             // menuItemCloseAllButThisOne
             // 
             this.menuItemCloseAllButThisOne.Name = "menuItemCloseAllButThisOne";
-            this.menuItemCloseAllButThisOne.Size = new System.Drawing.Size(191, 22);
+            this.menuItemCloseAllButThisOne.Size = new System.Drawing.Size(270, 30);
             this.menuItemCloseAllButThisOne.Text = "Close All &But This One";
             this.menuItemCloseAllButThisOne.Click += new System.EventHandler(this.menuItemCloseAllButThisOne_Click);
             // 
             // menuItem4
             // 
             this.menuItem4.Name = "menuItem4";
-            this.menuItem4.Size = new System.Drawing.Size(188, 6);
+            this.menuItem4.Size = new System.Drawing.Size(267, 6);
             // 
             // menuItemExit
             // 
             this.menuItemExit.Name = "menuItemExit";
-            this.menuItemExit.Size = new System.Drawing.Size(191, 22);
+            this.menuItemExit.Size = new System.Drawing.Size(270, 30);
             this.menuItemExit.Text = "&Exit";
             this.menuItemExit.Click += new System.EventHandler(this.menuItemExit_Click);
             // 
@@ -168,13 +171,13 @@ namespace ArduinoStudio
             this.menuItemLayoutByXml});
             this.menuItemView.MergeIndex = 1;
             this.menuItemView.Name = "menuItemView";
-            this.menuItemView.Size = new System.Drawing.Size(44, 20);
+            this.menuItemView.Size = new System.Drawing.Size(61, 29);
             this.menuItemView.Text = "&View";
             // 
             // menuItemSolutionExplorer
             // 
             this.menuItemSolutionExplorer.Name = "menuItemSolutionExplorer";
-            this.menuItemSolutionExplorer.Size = new System.Drawing.Size(185, 22);
+            this.menuItemSolutionExplorer.Size = new System.Drawing.Size(267, 30);
             this.menuItemSolutionExplorer.Text = "&Solution Explorer";
             this.menuItemSolutionExplorer.Click += new System.EventHandler(this.menuItemSolutionExplorer_Click);
             // 
@@ -182,42 +185,42 @@ namespace ArduinoStudio
             // 
             this.menuItemPropertyWindow.Name = "menuItemPropertyWindow";
             this.menuItemPropertyWindow.ShortcutKeys = System.Windows.Forms.Keys.F4;
-            this.menuItemPropertyWindow.Size = new System.Drawing.Size(185, 22);
+            this.menuItemPropertyWindow.Size = new System.Drawing.Size(267, 30);
             this.menuItemPropertyWindow.Text = "&Property Window";
             this.menuItemPropertyWindow.Click += new System.EventHandler(this.menuItemPropertyWindow_Click);
             // 
             // menuItemToolbox
             // 
             this.menuItemToolbox.Name = "menuItemToolbox";
-            this.menuItemToolbox.Size = new System.Drawing.Size(185, 22);
+            this.menuItemToolbox.Size = new System.Drawing.Size(267, 30);
             this.menuItemToolbox.Text = "&Toolbox";
             this.menuItemToolbox.Click += new System.EventHandler(this.menuItemToolbox_Click);
             // 
             // menuItemOutputWindow
             // 
             this.menuItemOutputWindow.Name = "menuItemOutputWindow";
-            this.menuItemOutputWindow.Size = new System.Drawing.Size(185, 22);
+            this.menuItemOutputWindow.Size = new System.Drawing.Size(267, 30);
             this.menuItemOutputWindow.Text = "&Output Window";
             this.menuItemOutputWindow.Click += new System.EventHandler(this.menuItemOutputWindow_Click);
             // 
             // menuItemTaskList
             // 
             this.menuItemTaskList.Name = "menuItemTaskList";
-            this.menuItemTaskList.Size = new System.Drawing.Size(185, 22);
+            this.menuItemTaskList.Size = new System.Drawing.Size(267, 30);
             this.menuItemTaskList.Text = "Task &List";
             this.menuItemTaskList.Click += new System.EventHandler(this.menuItemTaskList_Click);
             // 
             // menuItem1
             // 
             this.menuItem1.Name = "menuItem1";
-            this.menuItem1.Size = new System.Drawing.Size(182, 6);
+            this.menuItem1.Size = new System.Drawing.Size(264, 6);
             // 
             // menuItemToolBar
             // 
             this.menuItemToolBar.Checked = true;
             this.menuItemToolBar.CheckState = System.Windows.Forms.CheckState.Checked;
             this.menuItemToolBar.Name = "menuItemToolBar";
-            this.menuItemToolBar.Size = new System.Drawing.Size(185, 22);
+            this.menuItemToolBar.Size = new System.Drawing.Size(267, 30);
             this.menuItemToolBar.Text = "Tool &Bar";
             this.menuItemToolBar.Click += new System.EventHandler(this.menuItemToolBar_Click);
             // 
@@ -226,33 +229,33 @@ namespace ArduinoStudio
             this.menuItemStatusBar.Checked = true;
             this.menuItemStatusBar.CheckState = System.Windows.Forms.CheckState.Checked;
             this.menuItemStatusBar.Name = "menuItemStatusBar";
-            this.menuItemStatusBar.Size = new System.Drawing.Size(185, 22);
+            this.menuItemStatusBar.Size = new System.Drawing.Size(267, 30);
             this.menuItemStatusBar.Text = "Status B&ar";
             this.menuItemStatusBar.Click += new System.EventHandler(this.menuItemStatusBar_Click);
             // 
             // menuItem2
             // 
             this.menuItem2.Name = "menuItem2";
-            this.menuItem2.Size = new System.Drawing.Size(182, 6);
+            this.menuItem2.Size = new System.Drawing.Size(264, 6);
             // 
             // menuItemLayoutByCode
             // 
             this.menuItemLayoutByCode.Name = "menuItemLayoutByCode";
-            this.menuItemLayoutByCode.Size = new System.Drawing.Size(185, 22);
+            this.menuItemLayoutByCode.Size = new System.Drawing.Size(267, 30);
             this.menuItemLayoutByCode.Text = "Layout By &Code";
             this.menuItemLayoutByCode.Click += new System.EventHandler(this.menuItemLayoutByCode_Click);
             // 
             // menuItemLayoutByXml
             // 
             this.menuItemLayoutByXml.Name = "menuItemLayoutByXml";
-            this.menuItemLayoutByXml.Size = new System.Drawing.Size(185, 22);
+            this.menuItemLayoutByXml.Size = new System.Drawing.Size(267, 30);
             this.menuItemLayoutByXml.Text = "Layout By &XML";
             this.menuItemLayoutByXml.Click += new System.EventHandler(this.menuItemLayoutByXml_Click);
             // 
             // menuItemTools
             // 
             this.menuItemTools.Name = "menuItemTools";
-            this.menuItemTools.Size = new System.Drawing.Size(48, 20);
+            this.menuItemTools.Size = new System.Drawing.Size(65, 29);
             this.menuItemTools.Text = "&Tools";
             // 
             // menuItemWindow
@@ -261,13 +264,13 @@ namespace ArduinoStudio
             this.menuItemNewWindow});
             this.menuItemWindow.MergeIndex = 2;
             this.menuItemWindow.Name = "menuItemWindow";
-            this.menuItemWindow.Size = new System.Drawing.Size(63, 20);
+            this.menuItemWindow.Size = new System.Drawing.Size(90, 29);
             this.menuItemWindow.Text = "&Window";
             // 
             // menuItemNewWindow
             // 
             this.menuItemNewWindow.Name = "menuItemNewWindow";
-            this.menuItemNewWindow.Size = new System.Drawing.Size(152, 22);
+            this.menuItemNewWindow.Size = new System.Drawing.Size(203, 30);
             this.menuItemNewWindow.Text = "&New Window";
             this.menuItemNewWindow.Click += new System.EventHandler(this.menuItemNewWindow_Click);
             // 
@@ -277,18 +280,19 @@ namespace ArduinoStudio
             this.menuItemAbout});
             this.menuItemHelp.MergeIndex = 3;
             this.menuItemHelp.Name = "menuItemHelp";
-            this.menuItemHelp.Size = new System.Drawing.Size(44, 20);
+            this.menuItemHelp.Size = new System.Drawing.Size(61, 29);
             this.menuItemHelp.Text = "&Help";
             // 
             // menuItemAbout
             // 
             this.menuItemAbout.Name = "menuItemAbout";
-            this.menuItemAbout.Size = new System.Drawing.Size(196, 22);
+            this.menuItemAbout.Size = new System.Drawing.Size(279, 30);
             this.menuItemAbout.Text = "&About ArduinoStudio...";
             this.menuItemAbout.Click += new System.EventHandler(this.menuItemAbout_Click);
             // 
             // statusBar
             // 
+            this.statusBar.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusBar.Location = new System.Drawing.Point(0, 387);
             this.statusBar.Name = "statusBar";
             this.statusBar.Size = new System.Drawing.Size(579, 22);
@@ -311,6 +315,7 @@ namespace ArduinoStudio
             // toolBar
             // 
             this.toolBar.ImageList = this.imageList;
+            this.toolBar.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolBarButtonNew,
             this.toolBarButtonOpen,
@@ -321,9 +326,9 @@ namespace ArduinoStudio
             this.toolBarButtonOutputWindow,
             this.toolBarButtonTaskList,
             this.toolBarButtonSeparator2});
-            this.toolBar.Location = new System.Drawing.Point(0, 24);
+            this.toolBar.Location = new System.Drawing.Point(0, 33);
             this.toolBar.Name = "toolBar";
-            this.toolBar.Size = new System.Drawing.Size(579, 25);
+            this.toolBar.Size = new System.Drawing.Size(579, 31);
             this.toolBar.TabIndex = 6;
             this.toolBar.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolBar_ButtonClick);
             // 
@@ -331,60 +336,60 @@ namespace ArduinoStudio
             // 
             this.toolBarButtonNew.ImageIndex = 0;
             this.toolBarButtonNew.Name = "toolBarButtonNew";
-            this.toolBarButtonNew.Size = new System.Drawing.Size(23, 22);
+            this.toolBarButtonNew.Size = new System.Drawing.Size(28, 28);
             this.toolBarButtonNew.ToolTipText = "Show Layout From XML";
             // 
             // toolBarButtonOpen
             // 
             this.toolBarButtonOpen.ImageIndex = 1;
             this.toolBarButtonOpen.Name = "toolBarButtonOpen";
-            this.toolBarButtonOpen.Size = new System.Drawing.Size(23, 22);
+            this.toolBarButtonOpen.Size = new System.Drawing.Size(28, 28);
             this.toolBarButtonOpen.ToolTipText = "Open";
             // 
             // toolBarButtonSeparator1
             // 
             this.toolBarButtonSeparator1.Name = "toolBarButtonSeparator1";
-            this.toolBarButtonSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.toolBarButtonSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // toolBarButtonSolutionExplorer
             // 
             this.toolBarButtonSolutionExplorer.ImageIndex = 2;
             this.toolBarButtonSolutionExplorer.Name = "toolBarButtonSolutionExplorer";
-            this.toolBarButtonSolutionExplorer.Size = new System.Drawing.Size(23, 22);
+            this.toolBarButtonSolutionExplorer.Size = new System.Drawing.Size(28, 28);
             this.toolBarButtonSolutionExplorer.ToolTipText = "Solution Explorer";
             // 
             // toolBarButtonPropertyWindow
             // 
             this.toolBarButtonPropertyWindow.ImageIndex = 3;
             this.toolBarButtonPropertyWindow.Name = "toolBarButtonPropertyWindow";
-            this.toolBarButtonPropertyWindow.Size = new System.Drawing.Size(23, 22);
+            this.toolBarButtonPropertyWindow.Size = new System.Drawing.Size(28, 28);
             this.toolBarButtonPropertyWindow.ToolTipText = "Property Window";
             // 
             // toolBarButtonToolbox
             // 
             this.toolBarButtonToolbox.ImageIndex = 4;
             this.toolBarButtonToolbox.Name = "toolBarButtonToolbox";
-            this.toolBarButtonToolbox.Size = new System.Drawing.Size(23, 22);
+            this.toolBarButtonToolbox.Size = new System.Drawing.Size(28, 28);
             this.toolBarButtonToolbox.ToolTipText = "Tool Box";
             // 
             // toolBarButtonOutputWindow
             // 
             this.toolBarButtonOutputWindow.ImageIndex = 5;
             this.toolBarButtonOutputWindow.Name = "toolBarButtonOutputWindow";
-            this.toolBarButtonOutputWindow.Size = new System.Drawing.Size(23, 22);
+            this.toolBarButtonOutputWindow.Size = new System.Drawing.Size(28, 28);
             this.toolBarButtonOutputWindow.ToolTipText = "Output Window";
             // 
             // toolBarButtonTaskList
             // 
             this.toolBarButtonTaskList.ImageIndex = 6;
             this.toolBarButtonTaskList.Name = "toolBarButtonTaskList";
-            this.toolBarButtonTaskList.Size = new System.Drawing.Size(23, 22);
+            this.toolBarButtonTaskList.Size = new System.Drawing.Size(28, 28);
             this.toolBarButtonTaskList.ToolTipText = "Task List";
             // 
             // toolBarButtonSeparator2
             // 
             this.toolBarButtonSeparator2.Name = "toolBarButtonSeparator2";
-            this.toolBarButtonSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.toolBarButtonSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
             // dockPanel
             // 
@@ -395,10 +400,10 @@ namespace ArduinoStudio
             this.dockPanel.DockRightPortion = 200D;
             this.dockPanel.DockTopPortion = 150D;
             this.dockPanel.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.dockPanel.Location = new System.Drawing.Point(0, 55);
+            this.dockPanel.Location = new System.Drawing.Point(0, 70);
             this.dockPanel.Name = "dockPanel";
             this.dockPanel.RightToLeftLayout = true;
-            this.dockPanel.Size = new System.Drawing.Size(579, 326);
+            this.dockPanel.Size = new System.Drawing.Size(579, 311);
             this.dockPanel.TabIndex = 0;
             // 
             // vS2012ToolStripExtender1
@@ -410,7 +415,7 @@ namespace ArduinoStudio
             // topBar
             // 
             this.topBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topBar.Location = new System.Drawing.Point(0, 49);
+            this.topBar.Location = new System.Drawing.Point(0, 64);
             this.topBar.Name = "topBar";
             this.topBar.Size = new System.Drawing.Size(579, 6);
             this.topBar.TabIndex = 9;
@@ -424,6 +429,13 @@ namespace ArduinoStudio
             this.bottomBar.Size = new System.Drawing.Size(579, 6);
             this.bottomBar.TabIndex = 10;
             this.bottomBar.Visible = false;
+            // 
+            // testBoardConfigToolStripMenuItem
+            // 
+            this.testBoardConfigToolStripMenuItem.Name = "testBoardConfigToolStripMenuItem";
+            this.testBoardConfigToolStripMenuItem.Size = new System.Drawing.Size(162, 29);
+            this.testBoardConfigToolStripMenuItem.Text = "Test board config";
+            this.testBoardConfigToolStripMenuItem.Click += new System.EventHandler(this.testBoardConfigToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -496,5 +508,6 @@ namespace ArduinoStudio
         private VSToolStripExtender vS2012ToolStripExtender1;
         private System.Windows.Forms.Panel topBar;
         private System.Windows.Forms.Panel bottomBar;
+        private System.Windows.Forms.ToolStripMenuItem testBoardConfigToolStripMenuItem;
     }
 }

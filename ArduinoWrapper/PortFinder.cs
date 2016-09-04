@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using System.Management;
 
 /// <summary>
@@ -20,7 +16,7 @@ using System.Management;
 /// 'coms' is an array of strings with 'COMnn' port identifiers, or null when no match was found. Additionally,
 /// the 'CurrentCOM' property of each BoardIdentifier in boards is updated (null or updated value).
 /// </summary>
-namespace BoardFinder
+namespace ArduinoWrapper
 {    
     /// <summary>
     /// Class containing fields that (more-or-less) uniquely define a port.
@@ -158,7 +154,7 @@ namespace BoardFinder
                 }
             }
             // Find matches
-            GraphAlgorithms.HungarianAlgorithm ha = new GraphAlgorithms.HungarianAlgorithm(cost);
+            HungarianAlgorithm ha = new HungarianAlgorithm(cost);
             int[] matches = ha.Run();
             // Create output
             string[] result = new string[na];

@@ -16,7 +16,7 @@ C# hungarian algorithm implementation
 
 using System.Collections.Generic;
 
-namespace GraphAlgorithms
+namespace ArduinoWrapper
 {
     /// <summary>
     /// 

@@ -1,6 +1,8 @@
+using Tools;
+
 namespace ArduinoStudio
 {
-    partial class Document
+    partial class CompileUploadWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +30,7 @@ namespace ArduinoStudio
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Document));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompileUploadWindow));
             this.mainMenu = new System.Windows.Forms.MenuStrip();
             this.menuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,7 +40,7 @@ namespace ArduinoStudio
             this.menuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.loggingViewCompilerOutput = new Tools.LoggingView();
             this.mainMenu.SuspendLayout();
             this.contextMenuTabPage.SuspendLayout();
             this.SuspendLayout();
@@ -61,20 +63,20 @@ namespace ArduinoStudio
             this.menuItem1.MergeAction = System.Windows.Forms.MergeAction.Insert;
             this.menuItem1.MergeIndex = 1;
             this.menuItem1.Name = "menuItem1";
-            this.menuItem1.Size = new System.Drawing.Size(89, 20);
+            this.menuItem1.Size = new System.Drawing.Size(100, 20);
             this.menuItem1.Text = "&MDI Document";
             // 
             // menuItem2
             // 
             this.menuItem2.Name = "menuItem2";
-            this.menuItem2.Size = new System.Drawing.Size(127, 22);
+            this.menuItem2.Size = new System.Drawing.Size(132, 22);
             this.menuItem2.Text = "Test";
             this.menuItem2.Click += new System.EventHandler(this.menuItem2_Click);
             // 
             // menuItemCheckTest
             // 
             this.menuItemCheckTest.Name = "menuItemCheckTest";
-            this.menuItemCheckTest.Size = new System.Drawing.Size(127, 22);
+            this.menuItemCheckTest.Size = new System.Drawing.Size(132, 22);
             this.menuItemCheckTest.Text = "Check Test";
             this.menuItemCheckTest.Click += new System.EventHandler(this.menuItemCheckTest_Click);
             // 
@@ -85,43 +87,47 @@ namespace ArduinoStudio
             this.menuItem4,
             this.menuItem5});
             this.contextMenuTabPage.Name = "contextMenuTabPage";
-            this.contextMenuTabPage.Size = new System.Drawing.Size(116, 70);
+            this.contextMenuTabPage.Size = new System.Drawing.Size(121, 70);
             // 
             // menuItem3
             // 
             this.menuItem3.Name = "menuItem3";
-            this.menuItem3.Size = new System.Drawing.Size(115, 22);
+            this.menuItem3.Size = new System.Drawing.Size(120, 22);
             this.menuItem3.Text = "Option &1";
             // 
             // menuItem4
             // 
             this.menuItem4.Name = "menuItem4";
-            this.menuItem4.Size = new System.Drawing.Size(115, 22);
+            this.menuItem4.Size = new System.Drawing.Size(120, 22);
             this.menuItem4.Text = "Option &2";
             // 
             // menuItem5
             // 
             this.menuItem5.Name = "menuItem5";
-            this.menuItem5.Size = new System.Drawing.Size(115, 22);
+            this.menuItem5.Size = new System.Drawing.Size(120, 22);
             this.menuItem5.Text = "Option &3";
             // 
-            // richTextBox1
+            // loggingViewCompilerOutput
             // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(448, 389);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            this.loggingViewCompilerOutput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.loggingViewCompilerOutput.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.loggingViewCompilerOutput.FollowLastItem = true;
+            this.loggingViewCompilerOutput.FormattingEnabled = true;
+            this.loggingViewCompilerOutput.Location = new System.Drawing.Point(0, 4);
+            this.loggingViewCompilerOutput.MaxEntriesInListBox = 3000;
+            this.loggingViewCompilerOutput.Name = "loggingViewCompilerOutput";
+            this.loggingViewCompilerOutput.Size = new System.Drawing.Size(448, 389);
+            this.loggingViewCompilerOutput.TabIndex = 2;
             // 
-            // DummyDoc
+            // CompileUploadWindow
             // 
             this.ClientSize = new System.Drawing.Size(448, 393);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.loggingViewCompilerOutput);
             this.Controls.Add(this.mainMenu);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mainMenu;
-            this.Name = "DummyDoc";
+            this.Name = "CompileUploadWindow";
             this.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
             this.TabPageContextMenuStrip = this.contextMenuTabPage;
             this.mainMenu.ResumeLayout(false);
@@ -142,6 +148,6 @@ namespace ArduinoStudio
         private System.Windows.Forms.ToolStripMenuItem menuItem5;
         private System.Windows.Forms.ToolStripMenuItem menuItemCheckTest;
         private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private LoggingView loggingViewCompilerOutput;
     }
 }

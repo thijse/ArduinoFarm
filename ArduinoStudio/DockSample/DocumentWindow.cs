@@ -10,9 +10,9 @@ using System.IO;
 
 namespace ArduinoStudio
 {
-    public partial class Document : DockContent
+    public partial class DocumentWindow : DockContent
     {
-        public Document()
+        public DocumentWindow()
         {
             InitializeComponent();
         }

@@ -106,42 +106,42 @@ namespace ArduinoStudio
             this.menuItemFile.Name = "menuItemFile";
             this.menuItemFile.Size = new System.Drawing.Size(50, 29);
             this.menuItemFile.Text = "&File";
-            this.menuItemFile.DropDownOpening += new System.EventHandler(this.menuItemFile_Popup);
+            this.menuItemFile.DropDownOpening += new System.EventHandler(this.MenuItemFilePopup);
             // 
             // menuItemNew
             // 
             this.menuItemNew.Name = "menuItemNew";
             this.menuItemNew.Size = new System.Drawing.Size(270, 30);
             this.menuItemNew.Text = "&New";
-            this.menuItemNew.Click += new System.EventHandler(this.menuItemNew_Click);
+            this.menuItemNew.Click += new System.EventHandler(this.MenuItemNewClick);
             // 
             // menuItemOpen
             // 
             this.menuItemOpen.Name = "menuItemOpen";
             this.menuItemOpen.Size = new System.Drawing.Size(270, 30);
-            this.menuItemOpen.Text = "&Open...";
-            this.menuItemOpen.Click += new System.EventHandler(this.menuItemOpen_Click);
+            this.menuItemOpen.Text = "&Open Sketch...";
+            this.menuItemOpen.Click += new System.EventHandler(this.MenuItemOpenClick);
             // 
             // menuItemClose
             // 
             this.menuItemClose.Name = "menuItemClose";
             this.menuItemClose.Size = new System.Drawing.Size(270, 30);
             this.menuItemClose.Text = "&Close";
-            this.menuItemClose.Click += new System.EventHandler(this.menuItemClose_Click);
+            this.menuItemClose.Click += new System.EventHandler(this.MenuItemCloseClick);
             // 
             // menuItemCloseAll
             // 
             this.menuItemCloseAll.Name = "menuItemCloseAll";
             this.menuItemCloseAll.Size = new System.Drawing.Size(270, 30);
             this.menuItemCloseAll.Text = "Close &All";
-            this.menuItemCloseAll.Click += new System.EventHandler(this.menuItemCloseAll_Click);
+            this.menuItemCloseAll.Click += new System.EventHandler(this.MenuItemCloseAllClick);
             // 
             // menuItemCloseAllButThisOne
             // 
             this.menuItemCloseAllButThisOne.Name = "menuItemCloseAllButThisOne";
             this.menuItemCloseAllButThisOne.Size = new System.Drawing.Size(270, 30);
             this.menuItemCloseAllButThisOne.Text = "Close All &But This One";
-            this.menuItemCloseAllButThisOne.Click += new System.EventHandler(this.menuItemCloseAllButThisOne_Click);
+            this.menuItemCloseAllButThisOne.Click += new System.EventHandler(this.MenuItemCloseAllButThisOneClick);
             // 
             // menuItem4
             // 
@@ -153,7 +153,7 @@ namespace ArduinoStudio
             this.menuItemExit.Name = "menuItemExit";
             this.menuItemExit.Size = new System.Drawing.Size(270, 30);
             this.menuItemExit.Text = "&Exit";
-            this.menuItemExit.Click += new System.EventHandler(this.menuItemExit_Click);
+            this.menuItemExit.Click += new System.EventHandler(this.MenuItemExitClick);
             // 
             // menuItemView
             // 
@@ -179,7 +179,7 @@ namespace ArduinoStudio
             this.menuItemSolutionExplorer.Name = "menuItemSolutionExplorer";
             this.menuItemSolutionExplorer.Size = new System.Drawing.Size(267, 30);
             this.menuItemSolutionExplorer.Text = "&Solution Explorer";
-            this.menuItemSolutionExplorer.Click += new System.EventHandler(this.menuItemSolutionExplorer_Click);
+            this.menuItemSolutionExplorer.Click += new System.EventHandler(this.MenuItemSolutionExplorerClick);
             // 
             // menuItemPropertyWindow
             // 
@@ -187,28 +187,28 @@ namespace ArduinoStudio
             this.menuItemPropertyWindow.ShortcutKeys = System.Windows.Forms.Keys.F4;
             this.menuItemPropertyWindow.Size = new System.Drawing.Size(267, 30);
             this.menuItemPropertyWindow.Text = "&Property Window";
-            this.menuItemPropertyWindow.Click += new System.EventHandler(this.menuItemPropertyWindow_Click);
+            this.menuItemPropertyWindow.Click += new System.EventHandler(this.MenuItemPropertyWindowClick);
             // 
             // menuItemToolbox
             // 
             this.menuItemToolbox.Name = "menuItemToolbox";
             this.menuItemToolbox.Size = new System.Drawing.Size(267, 30);
             this.menuItemToolbox.Text = "&Toolbox";
-            this.menuItemToolbox.Click += new System.EventHandler(this.menuItemToolbox_Click);
+            this.menuItemToolbox.Click += new System.EventHandler(this.MenuItemToolboxClick);
             // 
             // menuItemOutputWindow
             // 
             this.menuItemOutputWindow.Name = "menuItemOutputWindow";
             this.menuItemOutputWindow.Size = new System.Drawing.Size(267, 30);
             this.menuItemOutputWindow.Text = "&Output Window";
-            this.menuItemOutputWindow.Click += new System.EventHandler(this.menuItemOutputWindow_Click);
+            this.menuItemOutputWindow.Click += new System.EventHandler(this.MenuItemOutputWindowClick);
             // 
             // menuItemTaskList
             // 
             this.menuItemTaskList.Name = "menuItemTaskList";
             this.menuItemTaskList.Size = new System.Drawing.Size(267, 30);
             this.menuItemTaskList.Text = "Task &List";
-            this.menuItemTaskList.Click += new System.EventHandler(this.menuItemTaskList_Click);
+            this.menuItemTaskList.Click += new System.EventHandler(this.MenuItemTaskListClick);
             // 
             // menuItem1
             // 
@@ -222,7 +222,7 @@ namespace ArduinoStudio
             this.menuItemToolBar.Name = "menuItemToolBar";
             this.menuItemToolBar.Size = new System.Drawing.Size(267, 30);
             this.menuItemToolBar.Text = "Tool &Bar";
-            this.menuItemToolBar.Click += new System.EventHandler(this.menuItemToolBar_Click);
+            this.menuItemToolBar.Click += new System.EventHandler(this.MenuItemToolBarClick);
             // 
             // menuItemStatusBar
             // 
@@ -231,7 +231,7 @@ namespace ArduinoStudio
             this.menuItemStatusBar.Name = "menuItemStatusBar";
             this.menuItemStatusBar.Size = new System.Drawing.Size(267, 30);
             this.menuItemStatusBar.Text = "Status B&ar";
-            this.menuItemStatusBar.Click += new System.EventHandler(this.menuItemStatusBar_Click);
+            this.menuItemStatusBar.Click += new System.EventHandler(this.MenuItemStatusBarClick);
             // 
             // menuItem2
             // 
@@ -243,14 +243,14 @@ namespace ArduinoStudio
             this.menuItemLayoutByCode.Name = "menuItemLayoutByCode";
             this.menuItemLayoutByCode.Size = new System.Drawing.Size(267, 30);
             this.menuItemLayoutByCode.Text = "Layout By &Code";
-            this.menuItemLayoutByCode.Click += new System.EventHandler(this.menuItemLayoutByCode_Click);
+            this.menuItemLayoutByCode.Click += new System.EventHandler(this.MenuItemLayoutByCodeClick);
             // 
             // menuItemLayoutByXml
             // 
             this.menuItemLayoutByXml.Name = "menuItemLayoutByXml";
             this.menuItemLayoutByXml.Size = new System.Drawing.Size(267, 30);
             this.menuItemLayoutByXml.Text = "Layout By &XML";
-            this.menuItemLayoutByXml.Click += new System.EventHandler(this.menuItemLayoutByXml_Click);
+            this.menuItemLayoutByXml.Click += new System.EventHandler(this.MenuItemLayoutByXmlClick);
             // 
             // menuItemTools
             // 
@@ -270,9 +270,10 @@ namespace ArduinoStudio
             // menuItemNewWindow
             // 
             this.menuItemNewWindow.Name = "menuItemNewWindow";
+            this.menuItemNewWindow.Size = new System.Drawing.Size(145, 22);
             this.menuItemNewWindow.Size = new System.Drawing.Size(203, 30);
             this.menuItemNewWindow.Text = "&New Window";
-            this.menuItemNewWindow.Click += new System.EventHandler(this.menuItemNewWindow_Click);
+            this.menuItemNewWindow.Click += new System.EventHandler(this.MenuItemNewWindowClick);
             // 
             // menuItemHelp
             // 
@@ -288,7 +289,7 @@ namespace ArduinoStudio
             this.menuItemAbout.Name = "menuItemAbout";
             this.menuItemAbout.Size = new System.Drawing.Size(279, 30);
             this.menuItemAbout.Text = "&About ArduinoStudio...";
-            this.menuItemAbout.Click += new System.EventHandler(this.menuItemAbout_Click);
+            this.menuItemAbout.Click += new System.EventHandler(this.MenuItemAboutClick);
             // 
             // statusBar
             // 
@@ -330,7 +331,7 @@ namespace ArduinoStudio
             this.toolBar.Name = "toolBar";
             this.toolBar.Size = new System.Drawing.Size(579, 31);
             this.toolBar.TabIndex = 6;
-            this.toolBar.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolBar_ButtonClick);
+            this.toolBar.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ToolBarButtonClick);
             // 
             // toolBarButtonNew
             // 
@@ -452,9 +453,9 @@ namespace ArduinoStudio
             this.Name = "MainForm";
             this.Text = "ArduinoStudio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Closing += new System.ComponentModel.CancelEventHandler(this.MainForm_Closing);
-            this.Load += new System.EventHandler(this.MainForm_Load);
-            this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
+            this.Closing += new System.ComponentModel.CancelEventHandler(this.MainFormClosing);
+            this.Load += new System.EventHandler(this.MainFormLoad);
+            this.SizeChanged += new System.EventHandler(this.MainFormSizeChanged);
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
             this.toolBar.ResumeLayout(false);

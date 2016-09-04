@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using IniParser.Model;
 using IWshRuntimeLibrary;
 using File = System.IO.File;
 

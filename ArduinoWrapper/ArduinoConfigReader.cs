@@ -121,6 +121,8 @@ namespace ArduinoWrapper
         {
             Dictionary.Clear();
 
+            if (string.IsNullOrEmpty(file) || !File.Exists(file)) return;
+
             using (var fileStream = new StreamReader(file))
             {
                 string line;

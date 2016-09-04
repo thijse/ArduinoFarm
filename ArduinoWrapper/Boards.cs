@@ -225,6 +225,8 @@ namespace ArduinoWrapper
         {
             // All boards dirs 
             var boardsPath = FileUtils.Combine(userPath, "Arduino15\\packages");
+            if (Directory.Exists(boardsPath))
+            {
 
             var potentialPackageDirs = Directory.GetDirectories(boardsPath);
             foreach (var potentialPackageDir in potentialPackageDirs)
@@ -265,6 +267,8 @@ namespace ArduinoWrapper
                     AddBoards(currentArchitecture);
                 }
             }
+            }
+        }
         }            
     }
 

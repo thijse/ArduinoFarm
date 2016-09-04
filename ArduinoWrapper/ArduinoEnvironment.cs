@@ -1,19 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Diagnostics.Eventing.Reader;
-using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using IniParser;
-using IniParser.Model;
-using IniParser.Parser;
-using IWshRuntimeLibrary;
 using Utilities;
-using ErrorEventArgs = Utilities.ErrorEventArgs;
 using File = System.IO.File;
 
 
@@ -97,6 +85,45 @@ namespace ArduinoWrapper
                     if (File.Exists(prefs)) return prefs;
                 }
             }
+            
+            // Apparently There is a bug in the Arduino pref location in that it ignores it if the user data drive is different from c:
+
+
+            basepath = @"C:\"+basepath.Substring(Path.GetPathRoot(basepath).Length);
+            if (Directory.Exists(basepath))
+            {
+                subdirectoryEntries = Directory.GetDirectories(basepath);
+                foreach (var subdirectoryEntry in subdirectoryEntries)
+                {
+                    var t = (Path.GetFileName(subdirectoryEntry) ?? "").ToLowerInvariant(); // actually dirname
+                    if (t.Contains("arduino"))
+                    {
+                        var prefs = FileUtils.Combine(subdirectoryEntry, "preferences.txt");
+                        if (File.Exists(prefs)) return prefs;
+                    }
+                }
+            }
+
+
+            // Or maybe it uses a hard-coded path
+            var userName = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+            var stop = userName.IndexOf("\\", StringComparison.Ordinal);
+            userName = (stop > -1) ? userName.Substring(stop + 1, userName.Length - stop - 1) : string.Empty;
+            basepath = @"C:\Users\" + userName + @"\AppData\Local";
+
+            if (Directory.Exists(basepath))
+            {
+                subdirectoryEntries = Directory.GetDirectories(basepath);
+                foreach (var subdirectoryEntry in subdirectoryEntries)
+                {
+                    var t = (Path.GetFileName(subdirectoryEntry) ?? "").ToLowerInvariant(); // actually dir name
+                    if (t.Contains("arduino"))
+                    {
+                        var prefs = FileUtils.Combine(subdirectoryEntry, "preferences.txt");
+                        if (File.Exists(prefs)) return prefs;
+                    }
+                }
+            }
 
             return "";
         }
@@ -111,8 +138,7 @@ namespace ArduinoWrapper
         {
             return Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
         }
-
-                private string LocateApplicationPath()
+         private string LocateApplicationPath()
         {
             return Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData );
         }
@@ -121,8 +147,6 @@ namespace ArduinoWrapper
         {
             return _boards.FindBoardFiles(this);
         } 
-
-
 
 
         public void Verify(string inoPath)

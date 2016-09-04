@@ -436,7 +436,7 @@ namespace ArduinoStudio
             this.testBoardConfigToolStripMenuItem.Name = "testBoardConfigToolStripMenuItem";
             this.testBoardConfigToolStripMenuItem.Size = new System.Drawing.Size(162, 29);
             this.testBoardConfigToolStripMenuItem.Text = "Test board config";
-            this.testBoardConfigToolStripMenuItem.Click += new System.EventHandler(this.testBoardConfigToolStripMenuItem_Click);
+           // this.testBoardConfigToolStripMenuItem.Click += new System.EventHandler(this.testBoardConfigToolStripMenuItem_Click);
             // 
             // MainForm
             // 

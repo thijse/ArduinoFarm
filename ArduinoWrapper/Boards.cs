@@ -157,11 +157,11 @@ namespace ArduinoWrapper
         private readonly string _rootPath;
         private readonly string _userPath;
         private ArduinoConfigReader _arduinoConfigReader;
-        
-        public BoardPackages  BoardPackages { get; set; }
+
+        public BoardPackages BoardPackages { get; set; }
 
         public Boards(string rootPath, string userPath)
-        {              
+        {
             _rootPath = rootPath;
             _userPath = userPath;
             BoardPackages = new BoardPackages();
@@ -218,7 +218,7 @@ namespace ArduinoWrapper
                     }
                     AddBoards(currentArchitecture);
                 }
-            }           
+            }
         }
 
         public void AddUserBoardFiles(string userPath, ArduinoEnvironment arduinoEnvironment)
@@ -228,56 +228,56 @@ namespace ArduinoWrapper
             if (Directory.Exists(boardsPath))
             {
 
-            var potentialPackageDirs = Directory.GetDirectories(boardsPath);
-            foreach (var potentialPackageDir in potentialPackageDirs)
-            {
-                BoardPackage currentPackage = null;
-                var packageDir = FileUtils.Combine(potentialPackageDir, "hardware");
-                var potentialArchitectureDirs = Directory.GetDirectories(packageDir);
-                foreach (var potentialArchitectureDir in potentialArchitectureDirs)
+                var potentialPackageDirs = Directory.GetDirectories(boardsPath);
+                foreach (var potentialPackageDir in potentialPackageDirs)
                 {
-                    var versionDirs = Directory.GetDirectories(potentialArchitectureDir);
-                    foreach (var versionDir in versionDirs)
+                    BoardPackage currentPackage = null;
+                    var packageDir = FileUtils.Combine(potentialPackageDir, "hardware");
+                    var potentialArchitectureDirs = Directory.GetDirectories(packageDir);
+                    foreach (var potentialArchitectureDir in potentialArchitectureDirs)
                     {
-                        var boardFile = FileUtils.Combine(versionDir, "boards.txt");
-                        if (!File.Exists(boardFile)) continue;
-                        if (currentPackage == null)
+                        var versionDirs = Directory.GetDirectories(potentialArchitectureDir);
+                        foreach (var versionDir in versionDirs)
                         {
-                            var packageName = FileUtils.GetBaseName(potentialPackageDir);
-                            currentPackage = BoardPackages[packageName];
+                            var boardFile = FileUtils.Combine(versionDir, "boards.txt");
+                            if (!File.Exists(boardFile)) continue;
                             if (currentPackage == null)
                             {
-                                currentPackage = new BoardPackage {Name = packageName};
-                                BoardPackages.Add(currentPackage);
+                                var packageName = FileUtils.GetBaseName(potentialPackageDir);
+                                currentPackage = BoardPackages[packageName];
+                                if (currentPackage == null)
+                                {
+                                    currentPackage = new BoardPackage {Name = packageName};
+                                    BoardPackages.Add(currentPackage);
+                                }
                             }
+                            var architectureName = FileUtils.GetBaseName(potentialArchitectureDir);
+                            var currentArchitecture = currentPackage.BoardArchitectures[architectureName];
+                            if (currentArchitecture == null)
+                            {
+                                currentArchitecture = new BoardArchitecture
+                                {
+                                    Name = architectureName,
+                                    Parent = currentPackage,
+
+                                };
+                                currentPackage.BoardArchitectures.Add(currentArchitecture);
+                                currentArchitecture.FileName = boardFile;
+                            }
+                            AddBoards(currentArchitecture);
                         }
-                    var architectureName = FileUtils.GetBaseName(potentialArchitectureDir);
-                    var currentArchitecture = currentPackage.BoardArchitectures[architectureName];
-                    if (currentArchitecture == null)
-                    {
-                        currentArchitecture = new BoardArchitecture
-                        {
-                            Name = architectureName,
-                            Parent = currentPackage,
-                            
-                        };
-                        currentPackage.BoardArchitectures.Add(currentArchitecture);
-                        currentArchitecture.FileName = boardFile;
                     }
-                    AddBoards(currentArchitecture);
                 }
             }
-            }
         }
-        }            
-    }
+
 
         /// <summary>
         /// Add boards in config file to the architecture description
         /// </summary>
         /// <param name="boardArchitecture"></param>
         private void AddBoards(BoardArchitecture boardArchitecture)
-        {            
+        {
             // Read config file
             var boardsConfig = new ArduinoConfigReader(boardArchitecture.FileName);
             // Get description of all available menu options from config file
@@ -333,7 +333,8 @@ namespace ArduinoWrapper
         /// <param name="boardsConfig"></param>
         /// <param name="board"></param>
         /// <param name="menu_options"></param>
-        private void AddBoardOptions(ArduinoConfigReader boardsConfig, BoardDescription board, Dictionary<string, string> menu_options)
+        private void AddBoardOptions(ArduinoConfigReader boardsConfig, BoardDescription board,
+            Dictionary<string, string> menu_options)
         {
             // RegEx to find [board name].menu.[option].[option value] keys
             Regex opts = new Regex(string.Format(@"^{0}\.menu\.([^\.]+)\.([^\.]+)$", board.Name), RegexOptions.Compiled);
@@ -341,12 +342,14 @@ namespace ArduinoWrapper
             {
                 Match m = opts.Match(keyvalue.Key.Key);
                 if (m.Success)
-                {   // Create BoardOption when needed, add option value.
+                {
+                    // Create BoardOption when needed, add option value.
                     BoardOption board_option;
                     string name = m.Groups[1].Value;
                     board_option = board.BoardOptions[name];
                     if (board_option == null)
-                    {   // Create board option, including description of option (if available)
+                    {
+                        // Create board option, including description of option (if available)
                         board_option = new BoardOption(name, menu_options.ContainsKey(name) ? menu_options[name] : name);
                         board.BoardOptions.Add(board_option);
                     }
@@ -359,7 +362,7 @@ namespace ArduinoWrapper
                     });
                 }
             }
-        }   // EOF AddBoardOptions
-
+        } // EOF AddBoardOptions
     }
 }
+

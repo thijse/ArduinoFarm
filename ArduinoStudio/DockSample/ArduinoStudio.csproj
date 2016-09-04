@@ -57,11 +57,23 @@
     <Compile Include="AboutDialog.Designer.cs">
       <DependentUpon>AboutDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Document.cs">
+    <Compile Include="CompileUploadWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Document.Designer.cs">
-      <DependentUpon>Document.cs</DependentUpon>
+    <Compile Include="CompileUploadWindow.Designer.cs">
+      <DependentUpon>CompileUploadWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentWindow.Designer.cs">
+      <DependentUpon>DocumentWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoggingView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LoggingView.Designer.cs">
+      <DependentUpon>LoggingView.cs</DependentUpon>
     </Compile>
     <Compile Include="OutputWindow.cs">
       <SubType>Form</SubType>
@@ -122,9 +134,13 @@
       <SubType>Designer</SubType>
       <DependentUpon>AboutDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Document.resx">
+    <EmbeddedResource Include="CompileUploadWindow.resx">
+      <DependentUpon>CompileUploadWindow.cs</DependentUpon>
       <SubType>Designer</SubType>
-      <DependentUpon>Document.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentWindow.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DocumentWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OutputWindow.resx">
       <SubType>Designer</SubType>

@@ -6,10 +6,15 @@ using System.IO;
 using Lextm.SharpSnmpLib;
 using WeifenLuo.WinFormsUI.Docking;
 
+using ArduinoWrapper;
+
 namespace ArduinoStudio
 {
     public partial class MainForm : Form
     {
+        private ArduinoEnvironments _arduinoEnvironments;
+        private ArduinoEnvironment _arduinoEnvironment;
+
         private bool m_bSaveLayout = true;
         private DeserializeDockContent m_deserializeDockContent;
         private SolutionExplorer m_solutionExplorer;
@@ -21,6 +26,9 @@ namespace ArduinoStudio
         private SplashScreen _splashScreen;
         public MainForm()
         {
+            _arduinoEnvironments = new ArduinoEnvironments();
+            _arduinoEnvironment = _arduinoEnvironments.ArduinoIdeList[0];
+
             InitializeComponent();
 
             SetSplashScreen();

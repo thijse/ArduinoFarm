@@ -69,7 +69,7 @@ namespace ArduinoWrapper
             // The get accessor.
             get
             {
-                return this.First(i => i.Key.Key == key).Value;
+                return this.FirstOrDefault(i => i.Key.Key == key).Value;
             }
 
             // The set accessor.

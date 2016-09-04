@@ -237,6 +237,16 @@
     <Content Include="Logo.ico" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\ArduinoWrapper\ArduinoWrapper.csproj">
+      <Project>{a1807332-cddd-4bb2-bede-f046beb3e22d}</Project>
+      <Name>ArduinoWrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Utilities\Utilities.csproj">
+      <Project>{2530b029-8f53-4455-a8c9-127c9934a3af}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

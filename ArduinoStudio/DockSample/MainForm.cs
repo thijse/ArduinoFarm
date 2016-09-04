@@ -1,15 +1,20 @@
 using System;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 
+using ArduinoWrapper;
+
 namespace ArduinoStudio
 {
     public partial class MainForm : Form
     {
+        private ArduinoEnvironments _arduinoEnvironments;
+        private ArduinoEnvironment _arduinoEnvironment;
         private bool _showSplash;
         private SplashScreen _splashScreen;
         private bool _bSaveLayout = true;
@@ -22,6 +27,9 @@ namespace ArduinoStudio
 
         public MainForm()
         {
+            _arduinoEnvironments = new ArduinoEnvironments();
+            //_arduinoEnvironment = _arduinoEnvironments.ArduinoIdeList[0];
+
             InitializeComponent();
 
             SetSplashScreen();
@@ -216,10 +224,16 @@ namespace ArduinoStudio
 
         private void MenuItemOpenClick(object sender, EventArgs e)
         {
+            //Todo this is an initial test.
+            // In the future:
+            // - A sketch shall not be directly compiled, but added to to project
+            // - A window shall not be opened based on sketch, but per device
+            // - re-investigate if MDI setup should be used
+
             var openFile = new OpenFileDialog();
 
             openFile.InitialDirectory = Application.ExecutablePath;
-            openFile.Filter = "Arduino sketches (*.ino)|*.rtf|Arduino sketches pre-1.0 (*.pde)|*.txt|All files (*.*)|*.*";
+            openFile.Filter = "Arduino sketches (*.ino)|*.ino|Arduino sketches pre-1.0 (*.pde)|*.txt|All files (*.*)|*.*";
             openFile.FilterIndex = 1;
             openFile.RestoreDirectory = true;
 
@@ -235,13 +249,6 @@ namespace ArduinoStudio
                     return;
                 }
 
-                // Create compiler environment
-                //var _arduinoEnvironments = new ArduinoEnvironments();
-                //if (_arduinoEnvironments.ArduinoIdeList.Count > 0)
-                //{
-                //    _arduinoEnvironment = _arduinoEnvironments.ArduinoIdeList[0];
-                //    _arduinoEnvironment.OutputHandler += ArduinoEnvironmentOutput;
-                //}
 
                 // Create window
                 var compileUploadWindow = new CompileUploadWindow() {Text = fileName};
@@ -256,7 +263,35 @@ namespace ArduinoStudio
                     compileUploadWindow.Close();
                     MessageBox.Show(exception.Message);
                 }
+
+
+                // Create compiler environment
+                if (_arduinoEnvironments.ArduinoIdeList.Count > 0)
+                {
+                    _arduinoEnvironment = _arduinoEnvironments.ArduinoIdeList[0];
+                    _arduinoEnvironment.OutputHandler += delegate(object o, DataReceivedEventArgs args)
+                    {
+                        if (this.InvokeRequired)
+                        {
+                            Invoke(new MethodInvoker(() => { compileUploadWindow.LogMessage(args.Data); }));
+
+                        }
+                        else
+                        {
+                            compileUploadWindow.LogMessage(args.Data);
+                        }
+                    };
+                }
+
+                // Start Compilation (or "Verify" in Arduino-speak)
+                _arduinoEnvironment.Verify(fullName);
+
             }
+        }
+
+        private void ArduinoEnvironmentOutput(object sender, DataReceivedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void MenuItemFilePopup(object sender, EventArgs e)

@@ -116,7 +116,7 @@ namespace ArduinoStudio
             // 
             this.menuItemOpen.Name = "menuItemOpen";
             this.menuItemOpen.Size = new System.Drawing.Size(191, 22);
-            this.menuItemOpen.Text = "&Open...";
+            this.menuItemOpen.Text = "&Open Sketch...";
             this.menuItemOpen.Click += new System.EventHandler(this.MenuItemOpenClick);
             // 
             // menuItemClose
@@ -267,7 +267,7 @@ namespace ArduinoStudio
             // menuItemNewWindow
             // 
             this.menuItemNewWindow.Name = "menuItemNewWindow";
-            this.menuItemNewWindow.Size = new System.Drawing.Size(152, 22);
+            this.menuItemNewWindow.Size = new System.Drawing.Size(145, 22);
             this.menuItemNewWindow.Text = "&New Window";
             this.menuItemNewWindow.Click += new System.EventHandler(this.MenuItemNewWindowClick);
             // 

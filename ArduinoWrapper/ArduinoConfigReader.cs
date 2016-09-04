@@ -69,7 +69,7 @@ namespace ArduinoWrapper
             // The get accessor.
             get
             {
-                return this.First(i => i.Key.Key == key).Value;
+                return this.FirstOrDefault(i => i.Key.Key == key).Value;
             }
 
             // The set accessor.
@@ -120,6 +120,8 @@ namespace ArduinoWrapper
         public void Load(string file)
         {
             Dictionary.Clear();
+
+            if (string.IsNullOrEmpty(file) || !File.Exists(file)) return;
 
             using (var fileStream = new StreamReader(file))
             {

@@ -108,16 +108,16 @@
     <Compile Include="SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="VS2012ColorTable.cs" />
-    <Compile Include="VSToolStripExtender.cs">
+    <Compile Include="Theming\VS2012ColorTable.cs" />
+    <Compile Include="Theming\VSToolStripExtender.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="VSToolStripExtender.Designer.cs">
+    <Compile Include="Theming\VSToolStripExtender.Designer.cs">
       <DependentUpon>VSToolStripExtender.cs</DependentUpon>
     </Compile>
-    <Compile Include="VS2012ToolStripRenderer.cs" />
-    <Compile Include="VS2013ColorTable.cs" />
-    <Compile Include="VS2013ToolStripRenderer.cs" />
+    <Compile Include="Theming\VS2012ToolStripRenderer.cs" />
+    <Compile Include="Theming\VS2013ColorTable.cs" />
+    <Compile Include="Theming\VS2013ToolStripRenderer.cs" />
     <EmbeddedResource Include="AboutDialog.resx">
       <SubType>Designer</SubType>
       <DependentUpon>AboutDialog.cs</DependentUpon>
@@ -161,6 +161,9 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.config" />
+    <None Include="DockPanel.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -217,9 +220,7 @@
     <Content Include="Images\SplashScreen.png" />
     <Content Include="Logo.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Theming\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -57,6 +57,12 @@
     <Compile Include="AboutDialog.Designer.cs">
       <DependentUpon>AboutDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="BoardManagement\BoardOptionLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BoardManagement\BoardOptionLine.Designer.cs">
+      <DependentUpon>BoardOptionLine.cs</DependentUpon>
+    </Compile>
     <Compile Include="BoardManagement\BoardSelector.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,9 @@
     <EmbeddedResource Include="AboutDialog.resx">
       <SubType>Designer</SubType>
       <DependentUpon>AboutDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BoardManagement\BoardOptionLine.resx">
+      <DependentUpon>BoardOptionLine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BoardManagement\BoardSelector.resx">
       <DependentUpon>BoardSelector.cs</DependentUpon>

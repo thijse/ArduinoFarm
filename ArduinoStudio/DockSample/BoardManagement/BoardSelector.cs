@@ -13,18 +13,13 @@ namespace ArduinoStudio.BoardManagement
 {
     public partial class BoardSelector : Form
     {
-        private BoardPackages boards;
-        private Label[] option_labels;
-        private ComboBox[] option_options;
+        private BoardPackages boards;        
 
     public BoardSelector(BoardPackages _boards)
         {
             boards = _boards;
             // Create form
             InitializeComponent();
-            // 'Shortcuts'
-            option_labels = new Label[] { opt1_label, opt2_label, opt3_label };
-            option_options = new ComboBox[] { opt1_options, opt2_options, opt3_options };
             // Fill package combo
             v_package.Items.AddRange(boards.ToArray());
             // Select first package (when not empty). Triggers 'package changed'
@@ -76,30 +71,21 @@ namespace ArduinoStudio.BoardManagement
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void v_board_SelectedIndexChanged(object sender, EventArgs e)
-        {            
-            // Hide all current options
-            foreach (var label in option_labels) label.Hide();
-            foreach (var options in option_options) options.Hide();
+        {
+            // Clear current option list
+            board_options.SuspendLayout();
+            board_options.Controls.Clear();
             // Get current board description
             BoardDescription bd = v_board.SelectedItem as BoardDescription;
-            // Cycle through all (max 3...) options
-            for (int i = 0; i < 3 & i < bd.BoardOptions.Count; i++)
+            // Cycle through all options
+            for (int i = 0; i < bd.BoardOptions.Count; i++)
             {
                 BoardOption bo = bd.BoardOptions[i];
-                // Set label
-                option_labels[i].Text = bo.Description;
-                option_labels[i].Show();
-                // Set option values
-                option_options[i].SuspendLayout();
-                option_options[i].Items.Clear();
-                option_options[i].Items.AddRange(bo.ToArray());
-                if (option_options[i].Items.Count > 0)
-                {
-                    option_options[i].SelectedIndex = 0;
-                }
-                option_options[i].ResumeLayout();
-                option_options[i].Show();                
+                // Add control
+                board_options.Controls.Add(new BoardOptionLine(bo.Description, bo.ToArray()));
             }
+            // Resume layout
+            board_options.ResumeLayout();
         }
     }
 }

@@ -36,12 +36,7 @@
             this.v_board = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.opt1_label = new System.Windows.Forms.Label();
-            this.opt2_label = new System.Windows.Forms.Label();
-            this.opt3_options = new System.Windows.Forms.ComboBox();
-            this.opt3_label = new System.Windows.Forms.Label();
-            this.opt2_options = new System.Windows.Forms.ComboBox();
-            this.opt1_options = new System.Windows.Forms.ComboBox();
+            this.board_options = new System.Windows.Forms.FlowLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.v_comport = new System.Windows.Forms.ComboBox();
@@ -50,10 +45,10 @@
             this.d_baud_rate = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.do_compile_and_upload = new System.Windows.Forms.Button();
             this.do_show_terminal = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -93,7 +88,7 @@
             this.v_package.FormattingEnabled = true;
             this.v_package.Location = new System.Drawing.Point(147, 33);
             this.v_package.Name = "v_package";
-            this.v_package.Size = new System.Drawing.Size(219, 28);
+            this.v_package.Size = new System.Drawing.Size(269, 28);
             this.v_package.TabIndex = 4;
             this.v_package.SelectedIndexChanged += new System.EventHandler(this.v_package_SelectedIndexChanged);
             // 
@@ -103,7 +98,7 @@
             this.v_architecture.FormattingEnabled = true;
             this.v_architecture.Location = new System.Drawing.Point(147, 67);
             this.v_architecture.Name = "v_architecture";
-            this.v_architecture.Size = new System.Drawing.Size(219, 28);
+            this.v_architecture.Size = new System.Drawing.Size(269, 28);
             this.v_architecture.TabIndex = 4;
             this.v_architecture.SelectedIndexChanged += new System.EventHandler(this.v_architecture_SelectedIndexChanged);
             // 
@@ -113,7 +108,7 @@
             this.v_board.FormattingEnabled = true;
             this.v_board.Location = new System.Drawing.Point(147, 101);
             this.v_board.Name = "v_board";
-            this.v_board.Size = new System.Drawing.Size(219, 28);
+            this.v_board.Size = new System.Drawing.Size(269, 28);
             this.v_board.TabIndex = 4;
             this.v_board.SelectedIndexChanged += new System.EventHandler(this.v_board_SelectedIndexChanged);
             // 
@@ -127,79 +122,29 @@
             this.groupBox1.Controls.Add(this.v_package);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(396, 154);
+            this.groupBox1.Size = new System.Drawing.Size(463, 154);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Board selection";
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.opt1_label);
-            this.groupBox3.Controls.Add(this.opt2_label);
-            this.groupBox3.Controls.Add(this.opt3_options);
-            this.groupBox3.Controls.Add(this.opt3_label);
-            this.groupBox3.Controls.Add(this.opt2_options);
-            this.groupBox3.Controls.Add(this.opt1_options);
+            this.groupBox3.Controls.Add(this.board_options);
             this.groupBox3.Location = new System.Drawing.Point(12, 172);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(396, 154);
+            this.groupBox3.Size = new System.Drawing.Size(463, 177);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Board options";
             // 
-            // opt1_label
+            // board_options
             // 
-            this.opt1_label.AutoSize = true;
-            this.opt1_label.Location = new System.Drawing.Point(14, 36);
-            this.opt1_label.Name = "opt1_label";
-            this.opt1_label.Size = new System.Drawing.Size(49, 20);
-            this.opt1_label.TabIndex = 0;
-            this.opt1_label.Text = "OPT1";
-            // 
-            // opt2_label
-            // 
-            this.opt2_label.AutoSize = true;
-            this.opt2_label.Location = new System.Drawing.Point(14, 70);
-            this.opt2_label.Name = "opt2_label";
-            this.opt2_label.Size = new System.Drawing.Size(49, 20);
-            this.opt2_label.TabIndex = 1;
-            this.opt2_label.Text = "OPT2";
-            // 
-            // opt3_options
-            // 
-            this.opt3_options.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.opt3_options.FormattingEnabled = true;
-            this.opt3_options.Location = new System.Drawing.Point(147, 101);
-            this.opt3_options.Name = "opt3_options";
-            this.opt3_options.Size = new System.Drawing.Size(219, 28);
-            this.opt3_options.TabIndex = 4;
-            // 
-            // opt3_label
-            // 
-            this.opt3_label.AutoSize = true;
-            this.opt3_label.Location = new System.Drawing.Point(14, 104);
-            this.opt3_label.Name = "opt3_label";
-            this.opt3_label.Size = new System.Drawing.Size(49, 20);
-            this.opt3_label.TabIndex = 2;
-            this.opt3_label.Text = "OPT3";
-            // 
-            // opt2_options
-            // 
-            this.opt2_options.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.opt2_options.FormattingEnabled = true;
-            this.opt2_options.Location = new System.Drawing.Point(147, 67);
-            this.opt2_options.Name = "opt2_options";
-            this.opt2_options.Size = new System.Drawing.Size(219, 28);
-            this.opt2_options.TabIndex = 4;
-            // 
-            // opt1_options
-            // 
-            this.opt1_options.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.opt1_options.FormattingEnabled = true;
-            this.opt1_options.Location = new System.Drawing.Point(147, 33);
-            this.opt1_options.Name = "opt1_options";
-            this.opt1_options.Size = new System.Drawing.Size(219, 28);
-            this.opt1_options.TabIndex = 4;
+            this.board_options.AutoScroll = true;
+            this.board_options.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.board_options.Location = new System.Drawing.Point(3, 22);
+            this.board_options.Name = "board_options";
+            this.board_options.Size = new System.Drawing.Size(457, 152);
+            this.board_options.TabIndex = 1;
             // 
             // label5
             // 
@@ -265,7 +210,7 @@
             this.groupBox2.Controls.Add(this.v_comport);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(414, 12);
+            this.groupBox2.Location = new System.Drawing.Point(481, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(415, 154);
             this.groupBox2.TabIndex = 6;
@@ -274,20 +219,30 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.button1);
             this.groupBox4.Controls.Add(this.button2);
             this.groupBox4.Controls.Add(this.do_compile_and_upload);
             this.groupBox4.Controls.Add(this.do_show_terminal);
-            this.groupBox4.Controls.Add(this.button1);
-            this.groupBox4.Location = new System.Drawing.Point(414, 172);
+            this.groupBox4.Location = new System.Drawing.Point(481, 172);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(415, 154);
+            this.groupBox4.Size = new System.Drawing.Size(415, 177);
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.button1.Location = new System.Drawing.Point(169, 94);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 29);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Ok";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(213, 104);
+            this.button2.Location = new System.Drawing.Point(81, 94);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(85, 29);
             this.button2.TabIndex = 0;
@@ -312,31 +267,20 @@
             this.do_show_terminal.Text = "Terminal";
             this.do_show_terminal.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(304, 104);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 29);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Ok";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // BoardSelector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 345);
+            this.ClientSize = new System.Drawing.Size(888, 373);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Name = "BoardSelector";
             this.Text = "Configure board";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -354,12 +298,6 @@
         private System.Windows.Forms.ComboBox v_board;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label opt1_label;
-        private System.Windows.Forms.Label opt2_label;
-        private System.Windows.Forms.ComboBox opt3_options;
-        private System.Windows.Forms.Label opt3_label;
-        private System.Windows.Forms.ComboBox opt2_options;
-        private System.Windows.Forms.ComboBox opt1_options;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox v_comport;
@@ -372,5 +310,6 @@
         private System.Windows.Forms.Button do_compile_and_upload;
         private System.Windows.Forms.Button do_show_terminal;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.FlowLayoutPanel board_options;
     }
 }

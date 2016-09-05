@@ -28,7 +28,7 @@ namespace ArduinoStudio
         public MainForm()
         {
             _arduinoEnvironments = new ArduinoEnvironments();
-            //_arduinoEnvironment = _arduinoEnvironments.ArduinoIdeList[0];
+            _arduinoEnvironment = _arduinoEnvironments.ArduinoIdeList[0];
 
             InitializeComponent();
 
@@ -486,7 +486,17 @@ namespace ArduinoStudio
                 }
             }
         }
+
+        private void testBoardConfigToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var boards = _arduinoEnvironment.GetBoards();
+            BoardManagement.BoardSelector bs = new BoardManagement.BoardSelector(boards);
+            bs.ShowDialog();
+        }
+
         #endregion
+
+
     }
 
 }

@@ -55,6 +55,7 @@ namespace ArduinoStudio
             this.menuItemNewWindow = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.testBoardConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBar = new System.Windows.Forms.StatusStrip();
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.toolBar = new System.Windows.Forms.ToolStrip();
@@ -72,7 +73,6 @@ namespace ArduinoStudio
             this.vS2012ToolStripExtender1 = new ArduinoStudio.VSToolStripExtender(this.components);
             this.topBar = new System.Windows.Forms.Panel();
             this.bottomBar = new System.Windows.Forms.Panel();
-            this.testBoardConfigToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainMenu.SuspendLayout();
             this.toolBar.SuspendLayout();
             this.SuspendLayout();
@@ -270,7 +270,6 @@ namespace ArduinoStudio
             // menuItemNewWindow
             // 
             this.menuItemNewWindow.Name = "menuItemNewWindow";
-            this.menuItemNewWindow.Size = new System.Drawing.Size(145, 22);
             this.menuItemNewWindow.Size = new System.Drawing.Size(203, 30);
             this.menuItemNewWindow.Text = "&New Window";
             this.menuItemNewWindow.Click += new System.EventHandler(this.MenuItemNewWindowClick);
@@ -290,6 +289,13 @@ namespace ArduinoStudio
             this.menuItemAbout.Size = new System.Drawing.Size(279, 30);
             this.menuItemAbout.Text = "&About ArduinoStudio...";
             this.menuItemAbout.Click += new System.EventHandler(this.MenuItemAboutClick);
+            // 
+            // testBoardConfigToolStripMenuItem
+            // 
+            this.testBoardConfigToolStripMenuItem.Name = "testBoardConfigToolStripMenuItem";
+            this.testBoardConfigToolStripMenuItem.Size = new System.Drawing.Size(162, 29);
+            this.testBoardConfigToolStripMenuItem.Text = "Test board config";
+            this.testBoardConfigToolStripMenuItem.Click += new System.EventHandler(this.testBoardConfigToolStripMenuItem_Click);
             // 
             // statusBar
             // 
@@ -430,13 +436,6 @@ namespace ArduinoStudio
             this.bottomBar.Size = new System.Drawing.Size(579, 6);
             this.bottomBar.TabIndex = 10;
             this.bottomBar.Visible = false;
-            // 
-            // testBoardConfigToolStripMenuItem
-            // 
-            this.testBoardConfigToolStripMenuItem.Name = "testBoardConfigToolStripMenuItem";
-            this.testBoardConfigToolStripMenuItem.Size = new System.Drawing.Size(162, 29);
-            this.testBoardConfigToolStripMenuItem.Text = "Test board config";
-           // this.testBoardConfigToolStripMenuItem.Click += new System.EventHandler(this.testBoardConfigToolStripMenuItem_Click);
             // 
             // MainForm
             // 

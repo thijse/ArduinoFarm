@@ -143,6 +143,7 @@ namespace ArduinoWrapper
         public string Value { get; set; }
         public string Description { get; set; }
         public string UploadSpeed { get; set; }
+        public BoardOption Parent { get; set; }
 
         public override string ToString()
         {
@@ -358,7 +359,8 @@ namespace ArduinoWrapper
                     {
                         Value = m.Groups[2].Value,
                         Description = keyvalue.Value,
-                        UploadSpeed = boardsConfig.Dictionary[string.Format("{0}.upload.speed", keyvalue.Key.Key)]
+                        UploadSpeed = boardsConfig.Dictionary[string.Format("{0}.upload.speed", keyvalue.Key.Key)],
+                        Parent = board_option
                     });
                 }
             }

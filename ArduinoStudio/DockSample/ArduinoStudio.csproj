@@ -57,6 +57,7 @@
     <Compile Include="AboutDialog.Designer.cs">
       <DependentUpon>AboutDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="BoardManagement\BoardConfig.cs" />
     <Compile Include="BoardManagement\BoardOptionLine.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -254,7 +255,9 @@
     <Content Include="Images\SplashScreen.png" />
     <Content Include="Logo.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Utilities\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ArduinoWrapper\ArduinoWrapper.csproj">
       <Project>{a1807332-cddd-4bb2-bede-f046beb3e22d}</Project>

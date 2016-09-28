@@ -490,7 +490,7 @@ namespace ArduinoStudio
         private void testBoardConfigToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var boards = _arduinoEnvironment.GetBoards();
-            BoardManagement.BoardSelector bs = new BoardManagement.BoardSelector(boards);
+            BoardManagement.BoardSelector bs = new BoardManagement.BoardSelector(boards, null);
             bs.ShowDialog();
         }
 

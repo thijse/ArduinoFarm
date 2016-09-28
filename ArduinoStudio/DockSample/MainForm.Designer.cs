@@ -343,14 +343,14 @@ namespace ArduinoStudio
             // 
             this.toolBarButtonNew.ImageIndex = 0;
             this.toolBarButtonNew.Name = "toolBarButtonNew";
-            this.toolBarButtonNew.Size = new System.Drawing.Size(28, 28);
+            this.toolBarButtonNew.Size = new System.Drawing.Size(28, 20);
             this.toolBarButtonNew.ToolTipText = "Show Layout From XML";
             // 
             // toolBarButtonOpen
             // 
             this.toolBarButtonOpen.ImageIndex = 1;
             this.toolBarButtonOpen.Name = "toolBarButtonOpen";
-            this.toolBarButtonOpen.Size = new System.Drawing.Size(28, 28);
+            this.toolBarButtonOpen.Size = new System.Drawing.Size(28, 20);
             this.toolBarButtonOpen.ToolTipText = "Open";
             // 
             // toolBarButtonSeparator1
@@ -362,35 +362,35 @@ namespace ArduinoStudio
             // 
             this.toolBarButtonSolutionExplorer.ImageIndex = 2;
             this.toolBarButtonSolutionExplorer.Name = "toolBarButtonSolutionExplorer";
-            this.toolBarButtonSolutionExplorer.Size = new System.Drawing.Size(28, 28);
+            this.toolBarButtonSolutionExplorer.Size = new System.Drawing.Size(28, 20);
             this.toolBarButtonSolutionExplorer.ToolTipText = "Solution Explorer";
             // 
             // toolBarButtonPropertyWindow
             // 
             this.toolBarButtonPropertyWindow.ImageIndex = 3;
             this.toolBarButtonPropertyWindow.Name = "toolBarButtonPropertyWindow";
-            this.toolBarButtonPropertyWindow.Size = new System.Drawing.Size(28, 28);
+            this.toolBarButtonPropertyWindow.Size = new System.Drawing.Size(28, 20);
             this.toolBarButtonPropertyWindow.ToolTipText = "Property Window";
             // 
             // toolBarButtonToolbox
             // 
             this.toolBarButtonToolbox.ImageIndex = 4;
             this.toolBarButtonToolbox.Name = "toolBarButtonToolbox";
-            this.toolBarButtonToolbox.Size = new System.Drawing.Size(28, 28);
+            this.toolBarButtonToolbox.Size = new System.Drawing.Size(28, 20);
             this.toolBarButtonToolbox.ToolTipText = "Tool Box";
             // 
             // toolBarButtonOutputWindow
             // 
             this.toolBarButtonOutputWindow.ImageIndex = 5;
             this.toolBarButtonOutputWindow.Name = "toolBarButtonOutputWindow";
-            this.toolBarButtonOutputWindow.Size = new System.Drawing.Size(28, 28);
+            this.toolBarButtonOutputWindow.Size = new System.Drawing.Size(28, 20);
             this.toolBarButtonOutputWindow.ToolTipText = "Output Window";
             // 
             // toolBarButtonTaskList
             // 
             this.toolBarButtonTaskList.ImageIndex = 6;
             this.toolBarButtonTaskList.Name = "toolBarButtonTaskList";
-            this.toolBarButtonTaskList.Size = new System.Drawing.Size(28, 28);
+            this.toolBarButtonTaskList.Size = new System.Drawing.Size(28, 20);
             this.toolBarButtonTaskList.ToolTipText = "Task List";
             // 
             // toolBarButtonSeparator2
